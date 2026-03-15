@@ -1,5 +1,5 @@
-name: "🐞 Bug Report"
-description: "Report a problem, unexpected behavior, or system error"
+name: "🐞 Reportar BUG"
+description: "Relate um problema, comportamento inesperado ou erro do sistema"
 title: "[BUG] "
 labels: ["bug"]
 assignees: []
@@ -10,101 +10,101 @@ body:
       value: |
         ## 🐞 Bug Report
 
-        Thank you for helping improve this project!  
-        Please provide as much detail as possible so we can reproduce and fix the issue quickly.
+        Obrigado por ajudar a melhorar este projeto!  
+        Por favor, forneça o máximo de detalhes possível para que possamos reproduzir e corrigir o problema rapidamente.
 
-        **Tips for a good report**
-        - Be specific and clear
-        - Include steps to reproduce the issue
-        - Attach screenshots or logs if possible
-        - Describe what you expected vs what actually happened
+        **Dicas para um bom relatório**
+        - Seja específico e claro
+        - Inclua passos para reproduzir o problema
+        - Anexe capturas de tela ou logs, se possível
+        - Descreva o que você esperava vs. o que realmente aconteceu
 
   - type: textarea
     id: problem_description
     attributes:
-      label: 📋 Problem Description
-      description: Clearly describe the bug you encountered.
+      label: 📋 Descrição do Problema
+      description: Descreva claramente o bug que você encontrou.
       placeholder: |
-        Example:
-        When submitting the login form, the system returns a 500 error instead of authenticating the user.
+        Exemplo:
+        Ao enviar o formulário de login, o sistema retorna um erro 500 em vez de autenticar o usuário.
     validations:
       required: true
 
   - type: textarea
     id: steps_to_reproduce
     attributes:
-      label: 🔁 Steps to Reproduce
-      description: Provide detailed steps so we can reproduce the issue.
+      label: 🔁 Passos para Reproduzir
+      description: Forneça passos detalhados para que possamos reproduzir o problema.
       placeholder: |
-        1. Go to the login page
-        2. Enter valid credentials
-        3. Click "Login"
-        4. Observe the error message
+        1. Vá para a página de login
+        2. Insira credenciais válidas
+        3. Clique em "Login"
+        4. Observe a mensagem de erro
     validations:
       required: true
 
   - type: textarea
     id: expected_behavior
     attributes:
-      label: ✅ Expected Behavior
-      description: What should happen when the feature works correctly?
+      label: ✅ Comportamento Esperado
+      description: O que deveria acontecer quando a funcionalidade funciona corretamente?
       placeholder: |
-        Example:
-        The user should be successfully logged in and redirected to the dashboard.
+        Exemplo:
+        O usuário deve ser logado com sucesso e redirecionado para o painel de controle (dashboard).
     validations:
       required: true
 
   - type: textarea
     id: actual_behavior
     attributes:
-      label: ❌ Actual Behavior
-      description: What actually happened instead?
+      label: ❌ Comportamento Atual
+      description: O que realmente aconteceu em vez disso?
       placeholder: |
-        Example:
-        The system returns a 500 error and displays "Internal Server Error".
+        Exemplo:
+        O sistema retorna um erro 500 e exibe "Internal Server Error".
     validations:
       required: true
 
   - type: textarea
     id: evidence
     attributes:
-      label: 📎 Evidence (Screenshots, Logs, Errors)
-      description: Attach screenshots, logs, stack traces, or error messages.
+      label: 📎 Evidencia (Screenshots, Logs, Errors)
+      description: Anexe prints, logs, stack traces ou mensagens de erro.
       placeholder: |
-        Example:
-        - Screenshots of the issue
-        - Error logs
+        Exemplo:
+        - Capturas de tela do problema
+        - Logs de erro
         - Stack trace
-        - Console output
+        - Saída do console (Console output)
 
   - type: input
     id: environment
     attributes:
-      label: 💻 Environment
-      description: Provide details about the environment where the bug occurred.
+      label: 💻 Ambiente
+      description: Forneça detalhes sobre o ambiente onde o bug ocorreu.
       placeholder: |
-        Example: 
-        OS: Windows 11
-        Browser: Chrome 121
+        Exemplo: 
+        SO: Windows 11
+        Navegador: Chrome 121
         Node: 18.x
-        App version: 1.3.2
+        Versão do App: 1.3.2
 
   - type: textarea
     id: additional_context
     attributes:
-      label: 🧩 Additional Context
-      description: Add any other information that may help understand the problem.
+      label: 🧩 Contexto Adicional
+      description: Adicione qualquer outra informação que possa ajudar a entender o problema.
       placeholder: |
-        Example:
-        The issue started after the last deployment.
+        Exemplo:
+        O problema começou após a última implantação (deployment).
 
   - type: checkboxes
     id: acceptance_criteria
     attributes:
-      label: ✔ Acceptance Criteria
-      description: Conditions required to consider this bug resolved.
+      label: ✔ Critérios de Aceitação
+      description: Condições necessárias para considerar este bug como resolvido.
       options:
-        - label: The bug has been fixed
-        - label: The fix has been tested in a development environment
-        - label: The change does not introduce regressions
-        - label: Relevant tests were added or updated
+        - label: O bug foi corrigido
+        - label: A correção foi testada em ambiente de desenvolvimento
+        - label: A alteração não introduz regressões
+        - label: Testes relevantes foram adicionados ou atualizados
