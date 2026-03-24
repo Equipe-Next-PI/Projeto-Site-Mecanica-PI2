@@ -1,7 +1,7 @@
 # 📦 Oficina Integrada – Sistema de Gestão para Mecânica de Bairro
 
 ### 📌 Visão Geral
-O **Site para Oficina Mecânica** é uma solução web robusta desenvolvida pela equipe **NEXT **, focada em transformar a gestão operacional de oficinas mecânicas de pequeno e médio porte. O sistema substitui agendas de papel e controles manuais por um ecossistema digital que integra desde o agendamento de serviços até o controle financeiro e de estoque.
+O **Site para Oficina Mecânica** é uma solução web robusta desenvolvida pela equipe **NEXT**, focada em transformar a gestão operacional de oficinas mecânicas de pequeno e médio porte. O sistema substitui agendas de papel e controles manuais por um ecossistema digital que integra desde o agendamento de serviços até o controle financeiro e de estoque.
 
 #### 🎯 Diferenciais de Engenharia:
 * **Arquitetura Modular:** Divisão clara entre responsabilidades (Autenticação, Cadastros e Estoque).
