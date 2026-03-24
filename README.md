@@ -36,22 +36,21 @@ Servidor Web Local: XAMPP / WampServer
 📁 Estrutura de Diretórios (Exemplo em PHP)
 Este projeto segue uma estrutura organizada para facilitar a manutenção e o desenvolvimento em equipe.
 
-Plaintext
 .
-├── assets/                # Imagens, ícones e arquivos estáticos
-├── css/                   # Folhas de estilo (incluindo Bootstrap customizado)
-├── js/                    # Scripts JavaScript (validações, interações)
-├── config/                # Configurações do banco de dados (db.php)
-├── includes/              # Componentes reutilizáveis (header.php, footer.php, sidebar.php)
-├── modules/               # Lógica de negócio dividida por módulo
-│   ├── clientes/          # CRUD de clientes (cadastrar, listar, editar)
-│   ├── estoque/           # Controle de peças e produtos
-│   ├── financeiro/        # Registro de entradas e saídas
-│   └── agenda/            # Gerenciamento de dias e horários
-├── db/                    # Scripts SQL de criação do banco e dados iniciais (schema.sql)
-├── dashboard.php          # Painel principal do administrador
-├── index.php              # Tela de Login (Ponto de entrada)
-└── .env.example           # Template de variáveis de ambiente (credenciais do DB)
+├── sql/                  # Scripts de criação do banco (schema.sql)
+├── src/
+│   ├── config/           # Conexão com banco de dados e variáveis globais
+│   ├── includes/         # Componentes reutilizáveis (Header, Footer, Navbar)
+│   ├── modules/          # Lógica de negócio dividida por funcionalidades
+│   │   ├── agenda/       # Sistema de marcação de horários
+│   │   ├── estoque/      # Controle de entradas e saídas de peças
+│   │   ├── financeiro/   # Fluxo de caixa e relatórios
+│   │   └── clientes/     # Gestão de Clientes e Veículos
+│   ├── assets/           # CSS, Imagens e Bibliotecas JS
+│   └── index.php         # Dashboard Principal / Login
+├── docs/                 # Documentação do escopo e requisitos
+└── .env.example          # Exemplo de configuração de ambiente
+
 ⚙️ Setup de Desenvolvimento
 Para rodar o projeto localmente, siga os passos abaixo:
 
