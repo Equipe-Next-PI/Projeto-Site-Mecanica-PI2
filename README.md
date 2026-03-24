@@ -37,16 +37,15 @@ O projeto segue uma estrutura organizada para garantir escalabilidade e facilida
 │   ├── config/           # Conexão com banco de dados
 │   ├── includes/         # Componentes reutilizáveis (Header, Footer)
 │   ├── modules/          # Lógica dividida por funcionalidades
-│   │   ├── agenda/       # Marcação de horários
 │   │   ├── estoque/      # Controle de peças
-│   │   ├── financeiro/   # Fluxo de caixa
-│   │   └── clientes/     # Gestão de Clientes e Veículos
 │   ├── assets/           # CSS, Imagens e Bibliotecas JS
 │   └── index.php         # Dashboard Principal / Login
 └── .env.example          # Template de variáveis de ambiente
 
 ```
-###⚙️ Setup de Desenvolvimento
+---
+
+### ⚙️ Setup de Desenvolvimento
 
 Clone o Repositório:
 git clone https://github.com/next-semester/oficina-mecanica.git
@@ -57,6 +56,8 @@ Banco de Dados: Crie o banco oficina_db e importe o arquivo sql/schema.sql.
 
 Acesso: Abra http://localhost/oficina-mecanica no navegador.
 
+---
+
 ###📝 Equipe NEXT SEMESTER (TSI - 2º Semestre)
 
 ALICKSON RAMOS LISBOA
@@ -66,5 +67,7 @@ PEDRO NASCIMENTO JESUS
 VITOR HUGO DE JESUS SILVA
 
 WALLACE FRANCISCO OLIVEIRA SILVA
+
+---
 
 Projeto acadêmico desenvolvido para a disciplina de Projetos de Sistemas para Internet.
