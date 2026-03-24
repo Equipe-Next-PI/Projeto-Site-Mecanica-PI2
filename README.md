@@ -1,8 +1,11 @@
 📦 Site para Oficina Mecânica de Bairro – Sistema de Gestão Operacional
+
 📌 Visão Geral
+
 O Site para Oficina Mecânica é uma solução web completa para digitalizar e organizar as operações de oficinas de bairro. O sistema centraliza o controle de clientes, agendamentos, estoque de peças e fluxo financeiro em uma única plataforma online, permitindo que o dono da oficina abandone as agendas de papel e planilhas desorganizadas. O foco é a eficiência operacional e a facilidade de uso para o administrador.
 
 🎯 Diferenciais do Projeto:
+
 Centralização de Dados: Registro estruturado de clientes, veículos, serviços e produtos em um banco de dados relacional.
 
 Segurança: Módulo de autenticação seguro para garantir que apenas o administrador (dono da oficina) acesse dados sensíveis.
@@ -12,6 +15,7 @@ Controle de Estoque Ativo: Acompanhamento automático da quantidade de peças co
 Visibilidade Financeira: Relatórios simples de entradas e saídas para controle do fluxo de caixa.
 
 🏗️ Arquitetura do Sistema
+
 O projeto é estruturado de forma modular e organizada, seguindo princípios de separação de responsabilidades (uma abordagem MVC simplificada):
 
 Banco de Dados (MySQL): Camada de persistência com tabelas relacionais para Usuários, Clientes, Veículos, Produtos, Serviços, Agendamentos e Transações Financeiras.
@@ -21,6 +25,7 @@ Lógica de Negócio e Persistência (PHP/Node.js): Scripts responsáveis pelo pr
 Interface do Usuário (Front-end): Telas responsivas para o painel de controle (Dashboard), formulários de cadastro e visualização de relatórios, utilizando HTML5, CSS3, JavaScript e Bootstrap.
 
 🧱 Stack Tecnológica
+
 Linguagem (Back-end): PHP 8.x [ou Node.js v18 LTS]
 
 Banco de Dados: MySQL 8.0 [ou MariaDB]
@@ -34,6 +39,7 @@ Ferramentas de Design: Figma (Prototipagem de Alta Fidelidade)
 Servidor Web Local: XAMPP / WampServer 
 
 📁 Estrutura de Diretórios (Exemplo em PHP)
+
 Este projeto segue uma estrutura organizada para facilitar a manutenção e o desenvolvimento em equipe.
 
 ```text
@@ -55,6 +61,7 @@ Este projeto segue uma estrutura organizada para facilitar a manutenção e o de
 
 
 ⚙️ Setup de Desenvolvimento
+
 Para rodar o projeto localmente, siga os passos abaixo:
 
 Pré-requisitos: Ter um ambiente WAMP/LAMP instalado (ex: XAMPP) ou Node.js e MySQL configurados.
