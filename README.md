@@ -1,13 +1,13 @@
 # 📦 Oficina Integrada – Sistema de Gestão para Mecânica de Bairro
 
 ### 📌 Visão Geral
-O **Oficina Integrada** é uma solução web robusta desenvolvida pela equipe **NEXT SEMESTER**, focada em transformar a gestão operacional de oficinas mecânicas de pequeno e médio porte. O sistema substitui agendas de papel e controles manuais por um ecossistema digital que integra desde o agendamento de serviços até o controle financeiro e de estoque.
+O **Site para Oficina Mecânica** é uma solução web robusta desenvolvida pela equipe **NEXT **, focada em transformar a gestão operacional de oficinas mecânicas de pequeno e médio porte. O sistema substitui agendas de papel e controles manuais por um ecossistema digital que integra desde o agendamento de serviços até o controle financeiro e de estoque.
 
 #### 🎯 Diferenciais de Engenharia:
-* **Arquitetura Modular:** Divisão clara entre responsabilidades (Autenticação, Cadastros, Agenda, Estoque e Financeiro).
+* **Arquitetura Modular:** Divisão clara entre responsabilidades (Autenticação, Cadastros e Estoque).
 * **Persistência Relacional:** Modelagem de banco de dados SQL otimizada para garantir transações seguras.
 * **Interface Centrada no Usuário (UX):** Design intuitivo focado na rotina rápida de uma oficina.
-* **Segurança de Acesso:** Controle de sessão e autenticação para proteger dados de faturamento.
+* **Segurança de Acesso:** Controle de sessão e autenticação .
 
 ---
 
@@ -58,7 +58,7 @@ Acesso: Abra http://localhost/oficina-mecanica no navegador.
 
 ---
 
-###📝 Equipe NEXT SEMESTER (TSI - 2º Semestre)
+### 📝 Equipe NEXT SEMESTER (TSI - 2º Semestre)
 
 ALICKSON RAMOS LISBOA
 
