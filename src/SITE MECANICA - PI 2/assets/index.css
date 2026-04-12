@@ -1,0 +1,1840 @@
+/* ============================================================
+   INDEX.CSS — Mecânica Lorem Ipsum
+   Layout fiel ao design do PDF, 100% responsivo
+   ============================================================ */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* ============================================================
+   ROOT
+   ============================================================ */
+.root {
+  width: 100%;
+  position: relative;
+  background-color: var(--color-white);
+  overflow-x: hidden;
+  display: flex;
+  flex-direction: column;
+  line-height: normal;
+  letter-spacing: normal;
+}
+
+/* ============================================================
+   NAVBAR
+   ============================================================ */
+.nav-wrapper {
+  width: 100%;
+  display: flex;
+}
+
+.nav {
+  width: 100%;
+  background-color: var(--Principal);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 40px;
+  height: 72px;
+  position: sticky;
+  top: 0;
+  z-index: 999;
+  gap: 20px;
+}
+
+.nav-child {
+  display: none;
+}
+
+.logo {
+  cursor: pointer;
+  border: 0;
+  padding: 8px 24px;
+  background-color: var(--color-gray-100);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  height: 48px;
+  transition: background-color 0.2s;
+}
+
+.logo:hover {
+  background-color: var(--color-dimgray);
+}
+
+.logo-child {
+  display: none;
+}
+
+.logo2 {
+  font-size: var(--fs-16);
+  line-height: 1;
+  font-family: var(--font-montserrat);
+  font-weight: 600;
+  color: var(--color-white);
+  text-shadow: var(--text-shadow-1);
+}
+
+.navigation-links {
+  display: flex;
+  align-items: center;
+  gap: 0;
+}
+
+.home,
+.contato {
+  font-size: var(--fs-20);
+  font-family: var(--font-montserrat);
+  color: var(--color-white);
+  line-height: 72px;
+  padding: 0 20px;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: opacity 0.2s;
+}
+
+.home:hover,
+.contato:hover {
+  opacity: 0.75;
+}
+
+.navigation-list,
+.navigation-list2 {
+  display: flex;
+  align-items: center;
+}
+
+.servios,
+.sobre-ns {
+  font-size: var(--fs-20);
+  font-family: var(--font-montserrat);
+  color: var(--color-white);
+  line-height: 72px;
+  padding: 0 20px;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: opacity 0.2s;
+}
+
+.servios:hover,
+.sobre-ns:hover {
+  opacity: 0.75;
+}
+
+/* Hamburger */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 8px;
+  z-index: 1000;
+  flex-shrink: 0;
+}
+
+.hamburger span {
+  display: block;
+  width: 26px;
+  height: 3px;
+  background-color: var(--color-white);
+  border-radius: 2px;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.hamburger.is-active span:nth-child(1) {
+  transform: translateY(8px) rotate(45deg);
+}
+
+.hamburger.is-active span:nth-child(2) {
+  opacity: 0;
+}
+
+.hamburger.is-active span:nth-child(3) {
+  transform: translateY(-8px) rotate(-45deg);
+}
+
+/* ============================================================
+   HERO
+   ============================================================ */
+.root-inner {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.frame-parent {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.card-carousel-parent {
+  width: 100%;
+  min-height: 320px;
+  background-color: #1a1a1a;
+  background-image: url('./public/Rectangle-1423@2x.png');
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 60px 80px 48px;
+  gap: 20px;
+  position: relative;
+}
+
+.card-carousel-parent::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.48);
+  z-index: 0;
+}
+
+.card-carousel,
+.lorem-ipson-wrapper,
+.carousel-navigation,
+.cta-buttons-wrapper {
+  position: relative;
+  z-index: 1;
+}
+
+.card-carousel {
+  width: 100%;
+  max-width: 660px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.lorem-ipson-wrapper {
+  display: flex;
+}
+
+.lorem-ipson {
+  margin: 0;
+  font-size: clamp(32px, 5vw, 64px);
+  line-height: 1.1;
+  font-weight: 400;
+  font-family: var(--font-montserrat);
+  color: var(--color-white);
+}
+
+.carousel-navigation {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  max-width: 560px;
+}
+
+.back-button {
+  display: flex;
+  align-items: center;
+  padding-top: 4px;
+  flex-shrink: 0;
+}
+
+.icon-ionicons-filled-che {
+  width: 24px;
+  height: 24px;
+  filter: drop-shadow(0 4px 4px rgba(0, 0, 0, 0.25));
+  cursor: pointer;
+  flex-shrink: 0;
+}
+
+.forward-button {
+  flex: 1;
+}
+
+.lorem-ipsum-dolor {
+  font-family: var(--font-verdana);
+  font-size: var(--fs-16);
+  color: var(--color-white);
+  line-height: 1.55;
+}
+
+.cta-buttons-wrapper {
+  display: flex;
+}
+
+.cta-buttons {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.conhea {
+  cursor: pointer;
+  border: 0;
+  padding: 10px 24px;
+  background-color: var(--Destaque);
+  border-radius: var(--br-20);
+  box-shadow: var(--shadow-drop);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.2s;
+}
+
+.conhea:hover {
+  background-color: var(--color-orangered);
+}
+
+.conhea-child {
+  display: none;
+}
+
+.conhecer-labinfo {
+  font-size: var(--fs-18);
+  font-weight: 500;
+  font-family: var(--font-montserrat);
+  color: var(--color-white);
+  white-space: nowrap;
+}
+
+.component-3 {
+  cursor: pointer;
+  border: 2px solid var(--color-white);
+  padding: 8px 36px;
+  background-color: transparent;
+  border-radius: var(--br-20);
+  box-shadow: var(--shadow-drop);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.2s;
+}
+
+.component-3:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.component-3-child {
+  display: none;
+}
+
+.conhecer {
+  font-size: var(--fs-18);
+  font-weight: 500;
+  font-family: var(--font-montserrat);
+  color: var(--color-white);
+}
+
+/* ============================================================
+   IMAGE BANNER (3 fotos)
+   ============================================================ */
+.image-banner {
+  width: 100%;
+  padding: 40px 64px;
+  background-color: var(--color-white);
+}
+
+.frame-group {
+  display: flex;
+  gap: 32px;
+  flex-wrap: wrap;
+}
+
+.rectangle-parent {
+  flex: 1 1 260px;
+  min-width: 220px;
+  border-radius: var(--br-20);
+  overflow: hidden;
+  position: relative;
+  min-height: 230px;
+  background-color: #888;
+  isolation: isolate;
+}
+
+.frame-child {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: var(--br-20);
+}
+
+.lorem-ipsum-dolor2 {
+  position: relative;
+  z-index: 1;
+  font-family: var(--font-montserrat);
+  font-size: var(--fs-12);
+  color: var(--color-white);
+  line-height: var(--lh-20);
+  padding: 150px 16px 16px;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.72) 0%, transparent 55%);
+  min-height: 230px;
+  display: flex;
+  align-items: flex-end;
+}
+
+/* ============================================================
+   SERVIÇOS
+   ============================================================ */
+.produtos-wrapper {
+  width: 100%;
+  display: flex;
+}
+
+.produtos {
+  width: 100%;
+  background-color: var(--color-gainsboro-300);
+  display: flex;
+  flex-direction: column;
+  padding: 40px 48px 64px;
+  gap: 28px;
+}
+
+.produtos-child,
+.produtos-item {
+  display: none;
+}
+
+.services-header {
+  display: flex;
+  justify-content: center;
+}
+
+.servios2 {
+  margin: 0;
+  font-size: clamp(22px, 3vw, 30px);
+  line-height: 1.3;
+  font-weight: 400;
+  font-family: var(--font-montserrat);
+  color: var(--color-black);
+  text-align: center;
+}
+
+.service-cards-container {
+  width: 100%;
+  background-color: var(--color-whitesmoke);
+  border-radius: var(--br-10);
+  box-shadow: var(--shadow-drop);
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.service-cards-container-child {
+  display: none;
+}
+
+.frame-container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.cards-container-wrapper {
+  display: flex;
+  justify-content: center;
+}
+
+.cards-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+}
+
+.specialties-card {
+  display: flex;
+}
+
+.specialties-header {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.confira-nossas-especialidades {
+  font-family: var(--font-montserrat);
+  font-size: var(--fs-16);
+  color: var(--color-black);
+}
+
+.vector-icon {
+  width: 22px;
+  height: 21px;
+}
+
+.cards-container-child {
+  width: 280px;
+  height: 2px;
+  border-top: 2px solid var(--color-black);
+}
+
+.oil-change-card,
+.injection-card,
+.brakes-card {
+  display: grid !important;
+  grid-template-columns: repeat(3, 1fr) !important;
+  gap: 24px;
+  width: 100%;
+  margin-bottom: 24px;
+}
+
+/* Ajuste individual dos cards para ficarem idênticos */
+.card-1,
+.card-2,
+.card-3,
+.card-4,
+.card-5,
+.rectangle-parent2,
+.brakes-details,
+.brakes-system-card {
+  width: 100%;
+  min-height: 100px;
+  background-color: var(--Equipe-NEXT-Azul-0);
+  border-radius: var(--br-20);
+  box-shadow: var(--shadow-drop);
+  display: flex;
+  justify-content: space-between;
+  /* Texto na esquerda, barra laranja na direita */
+  align-items: stretch;
+  overflow: hidden;
+}
+
+.oil-change-detail-wrapper,
+.card-2-inner,
+.suspension-details,
+.injection-detail-wrapper,
+.brakes-data,
+.troca-de-leo-do-motor-parent,
+.brakes-system-card {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  /* Centraliza texto e ícone horizontalmente */
+  text-align: center;
+  padding: 15px !important;
+}
+
+.card-1-child,
+.card-2-child {
+  display: none;
+}
+
+
+
+/* A barra laranja lateral (Destaque) */
+.card-1-item,
+.card-2-item,
+.card-4-item,
+.frame-child2,
+.brakes-details-item {
+  width: 15px;
+  background-color: var(--Destaque);
+  flex-shrink: 0;
+}
+
+
+.suspension-card {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.card-4 {
+  align-items: stretch;
+}
+
+
+
+.oil-change-detail {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.troca-de-leo,
+.suspenso-e-direo,
+.troca-de-pneus,
+.sistema-de-freios {
+  font-family: var(--font-montserrat);
+  font-size: 16px;
+  font-weight: 500;
+  color: var(--color-black);
+  padding: 0 !important;
+  /* Limpa o padding antigo */
+  margin: 0;
+  width: 100%;
+}
+
+.sistema-de-freios {
+  text-align: center !important;
+  padding: 0 !important;
+  margin: 0 0 5px 0 !important;
+  width: 100%;
+  font-family: var(--font-montserrat);
+  font-size: 16px;
+  font-weight: 500;
+  color: var(--color-black);
+}
+
+/* Se o Sistema de Freios não tiver a barra laranja no HTML, adicione este pseudo-elemento */
+.brakes-system-card::after {
+  content: "";
+  position: absolute;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  width: 15px;
+  background-color: var(--Destaque);
+}
+
+.icon-ionicons-sharp-chev-wrapper,
+.icon-ionicons-sharp-chev-container,
+.icon-ionicons-sharp-chev-frame,
+.frame-div,
+.icon-ionicons-sharp-chev-wrapper2,
+.icon-ionicons-sharp-chev-wrapper3,
+.icon-ionicons-sharp-chev-wrapper5 {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+.icon-ionicons-sharp-chev,
+.icon-ionicons-sharp-chev3,
+.icon-ionicons-sharp-chev6,
+.icon-ionicons-sharp-chev8 {
+  width: 24px;
+  height: 24px;
+}
+
+/* Força o último card a se comportar como os outros */
+.brakes-system-card {
+  position: relative;
+  padding-right: 15px !important;
+  /* Espaço para a barra laranja */
+  min-height: 103px;
+  justify-content: center !important;
+}
+
+
+/* Responsividade: No celular, os cards ficam um embaixo do outro */
+@media screen and (max-width: 768px) {
+
+  .oil-change-card,
+  .injection-card,
+  .brakes-card {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ============================================================
+   DIVISÓRIA
+   ============================================================ */
+.divisoria-cont {
+  width: 100%;
+  height: 80px;
+  background-color: var(--Principal);
+}
+
+/* ============================================================
+   SOBRE NÓS
+   ============================================================ */
+.about-container-wrapper {
+  width: 100%;
+  padding: 64px 44px 80px;
+  display: flex;
+}
+
+.about-container {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.about-details {
+  display: flex;
+  justify-content: center;
+}
+
+.conhea-a-lorem {
+  cursor: pointer;
+  border: 0;
+  padding: 0;
+  background-color: transparent;
+  font-size: clamp(22px, 2.5vw, 30px);
+  line-height: 1.3;
+  font-family: var(--font-montserrat);
+  color: var(--color-black);
+  text-align: center;
+}
+
+.about-content {
+  display: flex;
+  gap: 64px;
+  flex-wrap: wrap;
+  align-items: flex-start;
+}
+
+/* Coluna imagem */
+.about-description {
+  flex: 1 1 280px;
+  min-width: 0;
+  position: relative;
+  isolation: isolate;
+}
+
+.image-4-icon {
+  width: 100%;
+  height: 380px;
+  object-fit: cover;
+  border-radius: var(--br-10);
+  display: block;
+}
+
+.years-experience {
+  position: absolute;
+  right: -24px;
+  bottom: -36px;
+  width: 165px;
+  background-color: var(--Destaque);
+  border-radius: var(--br-10);
+  padding: 16px 8px 20px 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  z-index: 1;
+}
+
+.image-5 {
+  display: none;
+}
+
+.experience-detail {
+  display: flex;
+  align-items: flex-end;
+}
+
+.experience-counter {
+  font-family: var(--font-montserrat);
+  font-size: clamp(28px, 4vw, 40px);
+  color: var(--color-white);
+  font-weight: 700;
+  line-height: 1.1;
+  margin-bottom: -8px;
+}
+
+.span {
+  font-size: 0.8em;
+}
+
+.anos-de-experiencia {
+  font-family: var(--font-montserrat);
+  font-size: var(--fs-15);
+  color: var(--color-white);
+  line-height: var(--lh-60);
+}
+
+/* Coluna texto */
+.about-paragraph {
+  flex: 1 1 340px;
+  min-width: 0;
+  padding-top: 8px;
+}
+
+.rectangle-parent3 {
+  background-color: var(--color-white);
+  border-radius: var(--br-10);
+  padding: 32px 24px 44px 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.frame-child3 {
+  display: none;
+}
+
+.sobre-a-lorem {
+  margin: 0;
+  font-size: clamp(16px, 2vw, 20px);
+  line-height: var(--lh-30);
+  font-family: var(--font-montserrat);
+  font-weight: 600;
+  color: var(--color-black);
+}
+
+.nossa-oficina-mecnica {
+  font-family: var(--font-montserrat);
+  font-size: var(--fs-18);
+  line-height: 1.65;
+  color: var(--color-black);
+  max-width: 100%;
+}
+
+/* ============================================================
+   ESTATÍSTICAS
+   ============================================================ */
+
+.statistics-container {
+  display: flex;
+  justify-content: center;
+  padding: 0 20px 48px;
+}
+
+.cards {
+  display: flex;
+  gap: 32px;
+  flex-wrap: wrap;
+  justify-content: center;
+  width: 100%;
+  max-width: 480px;
+}
+
+.experience-card,
+.client-certifications {
+  flex: 1 1 180px;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.anos,
+.aprov,
+.clientes,
+.cert {
+  background-color: var(--color-gainsboro-300);
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  padding: 12px;
+  gap: 8px;
+}
+
+.anos-child {
+  display: none;
+}
+
+.years-experience-detail {
+  flex-shrink: 0;
+}
+
+.rectangle-parent4,
+.rectangle-parent5 {
+  width: 40px;
+  height: 40px;
+  border-radius: var(--br-10);
+  background-color: var(--color-white);
+  position: relative;
+  z-index: 1;
+}
+
+.frame-child4 {
+  display: none;
+}
+
+.vector-icon2,
+.vector-icon3 {
+  position: absolute;
+  top: 11px;
+  left: 11px;
+  width: 18px;
+  height: 18px;
+  z-index: 2;
+}
+
+.clip-path-group {
+  position: absolute;
+  top: 6px;
+  left: 8px;
+  width: 24px;
+  height: 24px;
+  z-index: 2;
+}
+
+.parent {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.placeholder-wrapper,
+.wrapper,
+.empty-wrapper {
+  display: flex;
+  align-items: center;
+  padding: 0 4px;
+}
+
+.placeholder,
+.b,
+.empty,
+.b2 {
+  font-family: var(--font-montserrat);
+  font-size: var(--fs-16);
+  font-weight: 700;
+  color: var(--color-gray-300);
+  line-height: 23px;
+}
+
+.taxa-de-aprovao,
+.clientes-satisfeitos,
+.certificaes {
+  font-family: var(--font-montserrat);
+  font-size: var(--fs-11);
+  color: var(--color-gray-300);
+  text-align: center;
+}
+
+.divisoria-sobre {
+  width: 100%;
+  height: 80px;
+  background-color: var(--Principal);
+}
+
+/* ============================================================
+   FORMULÁRIO + SERVIÇOS/MAPA
+   ============================================================ */
+.background-icon {
+  display: none;
+}
+
+.form-container-wrapper {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  padding: 64px 24px 64px;
+  background-color: #e8edf4;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+}
+
+
+.form-container {
+  display: flex;
+  justify-content: space-between;
+  /* Garante o espaçamento entre as duas colunas */
+  gap: 40px;
+  flex-wrap: wrap;
+  /* Importante para a responsividade que você já criou */
+  align-items: stretch;
+  /* Faz as colunas terem a mesma altura */
+}
+
+/* Formulário */
+.form-contato {
+  flex: 1 1 320px;
+  min-width: 0;
+  background-color: var(--color-gainsboro-100);
+  border-radius: var(--br-20);
+  padding: 24px 40px 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.form-contato-child {
+  display: none;
+}
+
+.form-header {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.icon-title-wrapper {
+  display: flex;
+  justify-content: center;
+  padding: 0 20px;
+}
+
+.icon-title {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.icon-build {
+  display: flex;
+  padding-top: 16px;
+}
+
+.icon-ionicons-outline-bu {
+  width: 24px;
+  height: 24px;
+}
+
+.solicite-um-oramento {
+  font-family: var(--font-montserrat);
+  font-size: var(--fs-18);
+  font-weight: 500;
+  color: var(--color-black);
+  line-height: var(--lh-60);
+}
+
+.input-fields {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.input-nome,
+.input-email,
+.input-tel,
+.input-cel,
+.input-marca,
+.input-modelo,
+.input-tipo,
+.input-desc {
+  width: 100%;
+  border: 0;
+  outline: 0;
+  background-color: var(--color-white);
+  border-radius: var(--br-20);
+  padding: 10px 16px;
+  font-family: var(--font-montserrat);
+  font-size: var(--fs-11);
+  color: var(--color-gray-200);
+  min-width: 0;
+  display: flex;
+  align-items: flex-start;
+}
+
+.input-nome,
+.input-email {
+  height: 36px;
+}
+
+.input-pair {
+  display: flex;
+  gap: 12px;
+  align-items: flex-start;
+}
+
+.input-pair>* {
+  flex: 1;
+  min-width: 0;
+}
+
+.vehicle-info {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.input-tipo-parent {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.input-desc {
+  background-color: var(--color-white);
+  border-radius: var(--br-20);
+  padding: 14px 16px 56px;
+  display: flex;
+  align-items: flex-start;
+  align-self: stretch;
+}
+
+.input-desc-child {
+  display: none;
+}
+
+.descrio-do-problema {
+  font-family: var(--font-montserrat);
+  font-size: var(--fs-11);
+  color: var(--color-gray-200);
+}
+
+.btn-submit-wrapper {
+  display: flex;
+  justify-content: center;
+  padding: 0 80px;
+}
+
+.btn-submit {
+  cursor: pointer;
+  border: 0;
+  padding: 10px 52px;
+  background-color: var(--Destaque);
+  border-radius: var(--br-20);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.2s;
+  width: 100%;
+}
+
+.btn-submit:hover {
+  background-color: var(--color-orangered);
+}
+
+.btn-submit-child {
+  display: none;
+}
+
+.enviar {
+  font-family: var(--font-montserrat);
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--color-gray-200);
+}
+
+/* Coluna direita */
+.service-area {
+  flex: 1 1 280px;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  font-family: var(--font-inter);
+  font-size: var(--fs-18);
+  color: var(--color-white);
+}
+
+/* Card laranja */
+.nossoserv {
+  background-color: var(--Destaque);
+  border-radius: var(--br-20);
+  display: flex;
+  flex-direction: row;
+  /* Alinha imagem e texto lado a lado */
+  align-items: center;
+  padding: 24px;
+  gap: 24px;
+  width: 100%;
+}
+
+.nossoserv-child {
+  display: none;
+}
+
+.services-background-icon {
+  width: 180px;
+  /* Ajuste o tamanho conforme o protótipo */
+  height: 180px;
+  object-fit: cover;
+  border-radius: var(--br-20);
+}
+
+.services-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.services-title {
+  display: flex;
+  padding: 0 6px;
+}
+
+.nossos-servios {
+  font-family: var(--font-inter);
+  font-size: var(--fs-18);
+  font-weight: 700;
+  color: var(--color-white);
+  line-height: var(--lh-30);
+}
+
+.service-list {
+  display: flex;
+}
+
+.manuteno-preventiva-reparos-container {
+  flex: 1;
+  font-family: var(--font-inter);
+  font-size: var(--fs-15);
+  color: var(--color-white);
+  line-height: var(--lh-30);
+  margin-top: -14px;
+}
+
+.blank-line {
+  margin: 0;
+}
+
+.manuteno-preventiva-reparos {
+  position: relative;
+  padding-left: 25px;
+  /* Espaço para o ícone de check se for usar */
+  margin-bottom: 8px;
+  font-weight: 500;
+}
+
+/* Mapa */
+.map-area {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  font-family: var(--font-rubik);
+  font-size: var(--fs-15);
+  color: var(--color-black);
+}
+
+.mapa {
+  font-family: var(--font-rubik);
+  font-size: var(--fs-18);
+  font-weight: 700;
+  color: var(--color-black);
+  display: inline-block;
+  width: 83px;
+}
+
+.map-container {
+  display: flex;
+  padding-left: 20px;
+}
+
+.map-interface {
+  flex: 1;
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.map-location {
+  flex: 1 1 150px;
+  min-width: 140px;
+  display: flex;
+  flex-direction: column;
+  padding-right: 8px;
+}
+
+.personalizadas-localizacao-map-icon {
+  width: 100%;
+  height: 120px;
+  object-fit: cover;
+  border-radius: var(--br-10);
+}
+
+.location-phone {
+  flex-shrink: 0;
+  padding-top: 40px;
+}
+
+.address-contact {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.icon-heroicons-solid-loc {
+  width: 20px;
+  height: 20px;
+}
+
+.address-info {
+  flex: 1 1 160px;
+  min-width: 0;
+  padding-top: 48px;
+}
+
+.address-street {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.rua-das-flores,
+.street-address,
+.testetestecom {
+  font-family: var(--font-nunito);
+  font-size: var(--fs-12);
+  color: var(--color-black);
+  line-height: 1.4;
+}
+
+/* ============================================================
+   FOOTER
+   ============================================================ */
+.footer {
+  width: 100%;
+  background-color: var(--Principal);
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  padding: 48px 80px 32px;
+  gap: 32px;
+  font-family: var(--font-rubik);
+  font-size: var(--fs-12);
+  color: var(--Apoio);
+  text-align: left;
+}
+
+.footer-child {
+  display: none;
+}
+
+.footer-content {
+  display: flex;
+  gap: 48px;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  flex-shrink: 0;
+}
+
+.copyright-info {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  min-width: 200px;
+}
+
+.frame-parent5 {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.lorem-ipsu-lorem-ipson-todos-wrapper {
+  display: flex;
+  padding: 0 0 0 2px;
+}
+
+.lorem-ipsum-dolor {
+  font-family: var(--font-rubik);
+  font-size: var(--fs-12);
+  color: var(--Apoio);
+  font-weight: 700;
+  line-height: 1.4;
+}
+
+.criado-por-alickson {
+  font-family: var(--font-nunito);
+  font-size: 10px;
+  color: var(--Apoio);
+  position: relative;
+  z-index: 1;
+}
+
+.operating-hours {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  min-width: 180px;
+  font-size: var(--fs-15);
+  flex-shrink: 0;
+}
+
+.horrio-de-funcionamento {
+  font-family: var(--font-rubik);
+  font-size: var(--fs-15);
+  color: var(--Apoio);
+  font-weight: 700;
+  position: relative;
+  z-index: 1;
+}
+
+.segunda-a-sexta {
+  font-family: var(--font-nunito);
+  font-size: var(--fs-12);
+  color: var(--Apoio);
+  line-height: 1.65;
+  height: auto;
+  display: inline-block;
+  position: relative;
+  z-index: 1;
+  flex-shrink: 0;
+}
+
+.contact-footer {
+  display: flex;
+  align-items: flex-end;
+  gap: 10px;
+  flex-shrink: 0;
+}
+
+.footer-address {
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 2px;
+}
+
+.address-contact {
+  gap: 8px;
+}
+
+.icon-heroicons-solid-loc2 {
+  width: 20px;
+  height: 20px;
+  position: relative;
+  z-index: 1;
+}
+
+.address-footer {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.footer-street,
+.contatoemailcom {
+  font-family: var(--font-rubik);
+  font-size: var(--fs-12);
+  color: var(--Apoio);
+  line-height: 1.4;
+  position: relative;
+  z-index: 1;
+}
+
+.footer-street {
+  min-width: 98px;
+}
+
+.contatoemailcom {
+  width: 169px;
+}
+
+.back-to-top {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  cursor: pointer;
+  font-family: var(--font-gotham);
+  padding-top: 2px;
+  flex-shrink: 0;
+}
+
+.top-icon {
+  display: flex;
+  justify-content: center;
+  padding: 0 40px;
+}
+
+.retornar-ao-inicio {
+  font-size: var(--fs-12);
+  font-weight: 500;
+  color: var(--Apoio);
+  white-space: nowrap;
+  position: relative;
+  z-index: 1;
+}
+
+/* ============================================================
+   RESPONSIVIDADE
+   ============================================================ */
+
+@media screen and (max-width: 1350px) {
+  .footer {
+    padding: 40px 48px 28px;
+  }
+
+  .card-carousel-parent {
+    padding: 52px 48px 40px;
+  }
+
+  .image-banner {
+    padding: 32px 40px;
+  }
+}
+
+@media screen and (max-width: 1125px) {
+  .about-content {
+    gap: 40px;
+  }
+
+  .form-container {
+    gap: 24px;
+  }
+}
+
+/* Tablet: ≤ 900px */
+@media screen and (max-width: 900px) {
+
+  /* Nav mobile */
+  .navigation-links {
+    display: none;
+    position: absolute;
+    top: 72px;
+    left: 0;
+    right: 0;
+    background-color: var(--Principal);
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 8px 16px 20px;
+    gap: 0;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.35);
+    z-index: 998;
+  }
+
+  .navigation-links.nav-open {
+    display: flex;
+  }
+
+  .home,
+  .servios,
+  .sobre-ns,
+  .contato {
+    line-height: 48px;
+    padding: 0 12px;
+    width: 100%;
+    font-size: var(--fs-16);
+  }
+
+  .navigation-list,
+  .navigation-list2 {
+    width: 100%;
+  }
+
+  .hamburger {
+    display: flex;
+  }
+
+  .nav {
+    padding: 0 20px;
+  }
+
+  .card-carousel-parent {
+    padding: 44px 32px 36px;
+    min-height: 280px;
+  }
+
+  .image-banner {
+    padding: 24px 20px;
+  }
+
+  .frame-group {
+    gap: 16px;
+  }
+
+  .rectangle-parent {
+    min-height: 200px;
+  }
+
+  .lorem-ipsum-dolor2 {
+    padding-top: 130px;
+    min-height: 200px;
+  }
+
+  .produtos {
+    padding: 32px 20px 48px;
+  }
+
+  .service-cards-container {
+    padding: 24px 20px 36px;
+  }
+
+  .oil-change-card,
+  .injection-card {
+    flex-wrap: wrap;
+    gap: 16px;
+  }
+
+  .brakes-card {
+    flex-wrap: wrap;
+    gap: 16px;
+  }
+
+  .about-container-wrapper {
+    padding: 48px 20px 60px;
+  }
+
+  .about-content {
+    gap: 40px;
+    flex-wrap: wrap;
+  }
+
+  .image-4-icon {
+    height: 300px;
+  }
+
+  .years-experience {
+    right: -8px;
+    bottom: -24px;
+    width: 150px;
+  }
+
+
+  .form-container-wrapper {
+    padding: 48px 20px;
+  }
+
+  .form-container {
+    gap: 20px;
+  }
+
+  .form-contato {
+    padding: 20px 24px 32px;
+  }
+
+  .btn-submit-wrapper {
+    padding: 0 40px;
+  }
+
+  .nossoserv {
+    flex-wrap: wrap;
+  }
+
+  .services-background-icon {
+    width: 100%;
+    height: 160px;
+  }
+
+  .map-interface {
+    flex-wrap: wrap;
+  }
+
+  .footer {
+    padding: 36px 32px 24px;
+    gap: 24px;
+  }
+
+  .footer-content {
+    gap: 28px;
+  }
+}
+
+/* Mobile: ≤ 600px */
+@media screen and (max-width: 600px) {
+  .nav {
+    padding: 0 14px;
+    height: 60px;
+  }
+
+  .logo {
+    padding: 6px 14px;
+    height: 40px;
+  }
+
+  .navigation-links {
+    top: 60px;
+  }
+
+  .card-carousel-parent {
+    padding: 32px 16px 28px;
+    min-height: 240px;
+  }
+
+  .card-carousel {
+    max-width: 100%;
+  }
+
+  .lorem-ipson {
+    font-size: clamp(22px, 7vw, 36px);
+  }
+
+  .carousel-navigation {
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+
+  .forward-button {
+    width: 100%;
+    order: 3;
+  }
+
+  .cta-buttons {
+    gap: 10px;
+  }
+
+  .conhea,
+  .component-3 {
+    flex: 1;
+    justify-content: center;
+  }
+
+  .conhecer-labinfo,
+  .conhecer {
+    font-size: var(--fs-16);
+  }
+
+  .image-banner {
+    padding: 16px 12px;
+  }
+
+  .frame-group {
+    gap: 12px;
+  }
+
+  .rectangle-parent {
+    flex: 1 1 100%;
+    min-height: 200px;
+  }
+
+  .lorem-ipsum-dolor2 {
+    padding-top: 140px;
+    min-height: 200px;
+  }
+
+  .produtos {
+    padding: 24px 12px 36px;
+    gap: 20px;
+  }
+
+  .service-cards-container {
+    padding: 20px 12px 28px;
+    gap: 20px;
+  }
+
+  .servios2 {
+    font-size: var(--fs-20);
+  }
+
+  .oil-change-card,
+  .injection-card,
+  .brakes-card {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+
+  .about-container-wrapper {
+    padding: 36px 12px 56px;
+  }
+
+  .about-content {
+    gap: 28px;
+    flex-direction: column;
+  }
+
+  .about-description {
+    flex: 1 1 100%;
+  }
+
+  .about-paragraph {
+    flex: 1 1 100%;
+  }
+
+  .image-4-icon {
+    height: 240px;
+  }
+
+  .years-experience {
+    right: 8px;
+    bottom: -20px;
+    width: 138px;
+  }
+
+  .conhea-a-lorem {
+    font-size: var(--fs-20);
+  }
+
+
+  .cards {
+    gap: 12px;
+  }
+
+  .form-container-wrapper {
+    padding: 36px 12px;
+  }
+
+  .form-contato {
+    padding: 16px 14px 28px;
+  }
+
+  .input-pair {
+    flex-direction: column;
+  }
+
+  .btn-submit-wrapper {
+    padding: 0 8px;
+  }
+
+  .btn-submit {
+    padding: 12px 20px;
+  }
+
+  .nossoserv {
+    flex-direction: column;
+    gap: 16px;
+    padding: 16px;
+  }
+
+  .services-background-icon {
+    width: 100%;
+    height: 160px;
+  }
+
+  .map-interface {
+    flex-direction: column;
+  }
+
+  .map-location {
+    min-width: 0;
+    flex: 1 1 100%;
+    padding-right: 0;
+  }
+
+  .address-info {
+    padding-top: 16px;
+  }
+
+  .location-phone {
+    padding-top: 16px;
+  }
+
+  .rua-das-flores {
+    white-space: normal;
+  }
+
+  .footer {
+    padding: 28px 14px 20px;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .footer-content {
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .operating-hours {
+    min-width: 0;
+    width: 100%;
+  }
+
+  .contact-footer {
+    flex-wrap: wrap;
+  }
+
+  .back-to-top {
+    width: 100%;
+    align-items: flex-start;
+  }
+
+  .top-icon {
+    padding: 0;
+    justify-content: flex-start;
+  }
+}
+
+/* Mobile muito pequeno */
+@media screen and (max-width: 380px) {
+  .lorem-ipson {
+    font-size: 20px;
+  }
+
+  .nav {
+    padding: 0 10px;
+  }
+
+  .logo {
+    padding: 6px 10px;
+  }
+
+  .conhecer-labinfo,
+  .conhecer {
+    font-size: var(--fs-15);
+  }
+
+  .footer {
+    padding: 20px 10px 16px;
+  }
+}
