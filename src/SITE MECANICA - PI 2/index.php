@@ -18,28 +18,7 @@
 <body>
   <div class="root">
     <section class="nav-wrapper">
-      <header class="nav">
-        <div class="nav-child"></div>
-        <button class="logo">
-          <div class="logo-child"></div>
-          <div class="logo2">Logo</div>
-        </button>
-        <div class="navigation-links" id="nav-links">
-          <div class="home">Home</div>
-          <div class="navigation-list">
-            <div class="servios">Serviços</div>
-          </div>
-          <div class="navigation-list2">
-            <div class="sobre-ns">Sobre nós</div>
-          </div>
-          <div class="contato">Contato</div>
-        </div>
-        <button class="hamburger" id="hamburger-btn" aria-label="Menu" aria-expanded="false">
-          <span></span>
-          <span></span>
-          <span></span>
-        </button>
-      </header>
+      <?php include_once('./Includes/header.php'); ?>
     </section>
     <section class="root-inner">
       <div class="frame-parent">
@@ -371,47 +350,34 @@
     <section class="form-container-wrapper">
       <div class="form-container">
         <section class="form-contato">
-          <div class="form-contato-child"></div>
-          <div class="form-header">
-            <div class="icon-title-wrapper">
-              <div class="icon-title">
-                <div class="icon-build">
-                  <img class="icon-ionicons-outline-bu" loading="lazy" alt=""
-                    src="./assets/icons/icon-ionicons-outline-build-outline.svg" />
+            <div class="solicite-um-oramento">Solicite um orçamento</div>
+            
+            <form action="./Includes/contato.php" method="POST">
+                <div class="input-fields">
+                    <input name="nome" type="text" class="input-nome" placeholder="Nome:" required />
+                    <input name="email" type="email" class="input-email" placeholder="Email:" required />
+                    
+                    <div class="input-pair">
+                        <input name="telefone" class="input-tel" placeholder="Telefone:" type="text" />
+                        <input name="celular" class="input-cel" placeholder="Celular:" type="text" />
+                    </div>
+                    
+                    <div class="input-pair">
+                        <input name="marca" class="input-marca" placeholder="Marca do Veículo:" type="text" />
+                        <input name="modelo" class="input-modelo" placeholder="Modelo e Ano:" type="text" />
+                    </div>
+                    
+                    <input name="servico" class="input-tipo" placeholder="Tipo de Serviço:" type="text" />
+                    
+                    <textarea name="descricao" class="input-desc" placeholder="Descrição do Problema:"></textarea>
                 </div>
-                <div class="solicite-um-oramento">Solicite um orçamento</div>
-              </div>
-            </div>
-            <div class="input-fields">
-              <input class="input-nome" placeholder="Nome:" type="text" />
-
-              <input class="input-email" placeholder="Email:" type="text" />
-
-              <div class="input-pair">
-                <input class="input-tel" placeholder="Telefone:" type="text" />
-
-                <input class="input-cel" placeholder="Celular:" type="text" />
-              </div>
-              <div class="vehicle-info">
-                <div class="input-pair">
-                  <input class="input-marca" placeholder="Marca do Veículo:" type="text" />
-
-                  <input class="input-modelo" placeholder="Modelo e Ano:" type="text" />
+                
+                <div class="btn-submit-wrapper">
+                    <button type="submit" class="btn-submit">
+                        <div class="enviar">Enviar Orçamento</div>
+                    </button>
                 </div>
-                <div class="input-tipo-parent">
-                  <input class="input-tipo" placeholder="Tipo de Serviço:" type="text" />
-
-                  <textarea class="input-desc" placeholder="Descrição do Problema ou Serviço Desejado:"></textarea>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="btn-submit-wrapper">
-            <button class="btn-submit">
-              <div class="btn-submit-child"></div>
-              <div class="enviar">Enviar</div>
-            </button>
-          </div>
+            </form>
         </section>
         <section class="service-area">
           <div class="nossoserv">
@@ -477,79 +443,8 @@
         </section>
       </div>
     </section>
-    <footer class="footer">
-      <div class="footer-child"></div>
-      <div class="footer-content">
-        <div class="copyright-info">
-          <div class="frame-parent5">
-            <div class="lorem-ipsu-lorem-ipson-todos-wrapper">
-              <b class="lorem-ipsum-dolor">© 2026 lorem ipsu lorem ipson. Todos os direitos
-                reservados.</b>
-            </div>
-            <div class="criado-por-alickson">
-              Criado por: Alickson Ramos - Vitor Hugo - Pedro Henrique
-            </div>
-          </div>
-        </div>
-        <div class="operating-hours">
-          <b class="horrio-de-funcionamento">Horário de funcionamento<br /></b>
-          <div class="segunda-a-sexta">
-            Segunda a Sexta: 9h às 19h<br />Sábados: 9h às 17h<br />Domingos:
-            Fechado
-          </div>
-        </div>
-      </div>
-      <div class="contact-footer">
-        <div class="footer-address">
-          <div class="address-contact">
-            <img class="icon-heroicons-solid-loc2" loading="lazy" alt=""
-              src="./assets/icons/icon-heroicons-Solid-location-marker.svg" />
-
-            <img class="icon-heroicons-solid-loc2" loading="lazy" alt=""
-              src="./assets/icons/icon-heroicons-Solid-phone.svg" />
-
-            <img class="icon-heroicons-solid-loc2" loading="lazy" alt=""
-              src="./assets/icons/icon-jam-icons-filled-envelope-f.svg" />
-          </div>
-        </div>
-        <div class="address-footer">
-          <div class="lorem-ipsum-dolor">
-            Rua das Flores, 123 Bairro Esperança, CEP 12345-678
-          </div>
-          <div class="footer-street">(11) 98765-4321</div>
-          <div class="contatoemailcom"><a href="/cdn-cgi/l/email-protection" class="__cf_email__"
-              data-cfemail="dab9b5b4aebbaeb59abfb7bbb3b6f4b9b5b7">[email&#160;protected]</a></div>
-        </div>
-      </div>
-      <div class="back-to-top">
-        <div class="oil-change-detail">
-          <div class="top-icon">
-            <img class="icon-ionicons-outline-bu" loading="lazy" alt=""
-              src="./assets/icons/icon-ionicons-outline-build-outline.svg" />
-          </div>
-          <div class="retornar-ao-inicio">Retornar ao início</div>
-        </div>
-      </div>
-    </footer>
+    <?php include_once('./Includes/footer.php'); ?>
   </div>
-  <script>
-    const btn = document.getElementById('hamburger-btn');
-    const nav = document.getElementById('nav-links');
-    if (btn && nav) {
-      btn.addEventListener('click', function () {
-        const open = nav.classList.toggle('nav-open');
-        btn.classList.toggle('is-active', open);
-        btn.setAttribute('aria-expanded', open);
-      });
-      nav.querySelectorAll('div').forEach(function (link) {
-        link.addEventListener('click', function () {
-          nav.classList.remove('nav-open');
-          btn.classList.remove('is-active');
-          btn.setAttribute('aria-expanded', false);
-        });
-      });
-    }
-  </script>
 </body>
-
+<script src="./assets/script.js"></script>
 </html>
