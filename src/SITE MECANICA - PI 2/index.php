@@ -4,7 +4,7 @@
       <?php include_once('./Includes/header.php'); ?>
     </section>
 
-    <section class="swiper mySwiper">
+    <section id="home" class="swiper mySwiper">
       <div class="swiper-wrapper">
         <div class="swiper-slide card-carousel-parent" style="background-image: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('./assets/img/slide1.png');">
           <div class="card-carousel">
@@ -49,7 +49,7 @@
       </div>
     </section>
 
-    <main class="produtos-wrapper">
+    <main id="servicos" class="produtos-wrapper">
       <div class="produtos">
         <div class="services-header">
           <h2 class="servios2">Nossas Especialidades</h2>
@@ -149,11 +149,11 @@
 
     <section class="divisoria-cont"></section>
 
-    <section class="about-container-wrapper">
+    <section id="sobre" class="about-container-wrapper">
       <div class="about-container">
         <div class="about-content">
           <section class="about-description">
-            <img class="image-4-icon" loading="lazy" alt="Oficina" src="./assets/images/Rectangle-1423@2x.png" />
+            <img class="image-4-icon" loading="lazy" alt="Oficina" src="./assets/img/sobre.png" />
             <div class="years-experience">
               <div class="experience-detail">
                 <b class="experience-counter"><span>20 </span><span class="span">+ </span></b>
@@ -175,61 +175,43 @@
       </div>
     </section>
 
-    <section class="statistics-container-parent">
-      <div class="statistics-container">
-        <div class="cards">
-          <div class="experience-card">
-            <div class="anos">
-              <div class="years-experience-detail">
-                <div class="rectangle-parent4">
-                  <img class="vector-icon2" loading="lazy" alt="" src="./assets/icons/Vector1.svg" />
-                </div>
-              </div>
-              <div class="parent">
-                <b class="placeholder">20 +</b>
-                <div class="clientes-satisfeitos">Anos de experiência</div>
-              </div>
-            </div>
-            <div class="aprov">
-              <div class="rectangle-parent5">
-                <img class="vector-icon3" loading="lazy" alt="" src="./assets/icons/Vector2.svg" />
-              </div>
-              <div class="parent">
-                <b class="b">100%</b>
-                <div class="taxa-de-aprovao">Taxa de Aprovação</div>
-              </div>
-            </div>
-          </div>
-          <div class="client-certifications">
-            <div class="clientes">
-              <div class="years-experience-detail">
-                <div class="rectangle-parent4">
-                  <img class="vector-icon2" loading="lazy" alt="" src="./assets/icons/Vector3.svg" />
-                </div>
-              </div>
-              <div class="parent">
-                <b class="empty">5000+</b>
-                <div class="clientes-satisfeitos">Clientes Satisfeitos</div>
-              </div>
-            </div>
-            <div class="cert">
-              <div class="years-experience-detail">
-                <div class="rectangle-parent4">
-                  <img class="clip-path-group" loading="lazy" alt="" src="./assets/icons/Clip-path-group.svg" />
-                </div>
-              </div>
-              <div class="parent">
-                <b class="b2">10+</b>
-                <div class="certificaes">Certificações</div>
-              </div>
-            </div>
-          </div>
-        </div>
+   <section class="statistics-section">
+  <div class="statistics-card">
+    <div class="stat-item">
+      <img src="./assets/icons/Vector1.svg" alt="Tempo" class="stat-icon" />
+      <div class="stat-text">
+        <span class="stat-number">20 +</span>
+        <span class="stat-desc">Anos de experiência</span>
       </div>
-      <div class="divisoria-sobre"></div>
-    </section>
+    </div>
+    
+    <div class="stat-item">
+      <img src="./assets/icons/Vector3.svg" alt="Clientes" class="stat-icon" />
+      <div class="stat-text">
+        <span class="stat-number">5000+</span>
+        <span class="stat-desc">Clientes Satisfeitos</span>
+      </div>
+    </div>
+    
+    <div class="stat-item">
+      <img src="./assets/icons/Vector2.svg" alt="Aprovação" class="stat-icon" />
+      <div class="stat-text">
+        <span class="stat-number">100%</span>
+        <span class="stat-desc">Taxa de Aprovação</span>
+      </div>
+    </div>
+    
+    <div class="stat-item">
+      <img src="./assets/icons/Clip-path-group.svg" alt="Certificações" class="stat-icon" />
+      <div class="stat-text">
+        <span class="stat-number">10+</span>
+        <span class="stat-desc">Certificações</span>
+      </div>
+    </div>
+  </div>
+</section>
 
-    <section class="form-container-wrapper">
+    <section id="contato" class="form-container-wrapper">
       <div class="form-container">
         <section class="form-contato">
             <div class="solicite-um-oramento">Solicite um orçamento</div>
@@ -259,7 +241,7 @@
 
         <section class="service-area">
           <div class="nossoserv">
-            <img class="services-background-icon" loading="lazy" alt="Mecânico" src="./assets/images/Rectangle-1423@2x.png" />
+            <img class="services-background-icon" loading="lazy" alt="Mecânico" src="./assets/img/forms.png" />
             <div class="services-info">
               <div class="services-title">
                 <b class="nossos-servios">Nossos Serviços</b>
@@ -280,29 +262,28 @@
           </div>
 
           <div class="map-area">
-            <b class="mapa">Mapa</b>
-            <div class="map-container">
-              <div class="map-interface">
-                <div class="map-location">
-                  <iframe src="https://maps.google.com/maps?q=Freguesia%20do%20O&t=&z=13&ie=UTF8&iwloc=&output=embed" width="100%" height="120" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
-                </div>
-                <div class="location-phone">
-                  <div class="address-contact">
-                    <img class="icon-heroicons-solid-loc" loading="lazy" alt="" src="./assets/icons/icon-heroicons-Solid-location-marker.svg" />
-                    <img class="icon-heroicons-solid-loc" loading="lazy" alt="" src="./assets/icons/icon-heroicons-Solid-phone.svg" />
-                    <img class="icon-heroicons-solid-loc" loading="lazy" alt="" src="./assets/icons/icon-jam-icons-filled-envelope-f.svg" />
-                  </div>
-                </div>
-                <div class="address-info">
-                  <div class="address-street">
-                    <div class="rua-das-flores">Rua das Flores, 123 - Freguesia do Ó</div>
-                    <div class="street-address">(11) 98765-4321</div>
-                    <div class="testetestecom">contato@oficinanext.com.br</div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
+  <b class="mapa">Mapa</b>
+  <div class="map-interface">
+    <div class="map-location">
+      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14634.33161280387!2d-46.7056037088118!3d-23.511520110469623!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94cef85566f19ecf%3A0xc682f6e91316b208!2sFreguesia%20do%20%C3%93%2C%20S%C3%A3o%20Paulo%20-%20SP!5e0!3m2!1spt-BR!2sbr!4v1714500000000!5m2!1spt-BR!2sbr" width="100%" height="120" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+    </div>
+    
+    <div class="contact-list-right">
+      <div class="contact-item">
+        <img class="contact-icon" loading="lazy" alt="Local" src="./assets/icons/icon-heroicons-Solid-location-marker.svg" />
+        <span>Rua das Flores, 123 - Freguesia do Ó</span>
+      </div>
+      <div class="contact-item">
+        <img class="contact-icon" loading="lazy" alt="Telefone" src="./assets/icons/icon-heroicons-Solid-phone.svg" />
+        <span>(11) 98765-4321</span>
+      </div>
+      <div class="contact-item">
+        <img class="contact-icon" loading="lazy" alt="Email" src="./assets/icons/icon-jam-icons-filled-envelope-f.svg" />
+        <span>contato@oficinanext.com.br</span>
+      </div>
+    </div>
+  </div>
+</div>
         </section>
       </div>
     </section>

@@ -12,11 +12,11 @@
 <body>
   <div class="root">
     <header class="nav">
-      <button class="logo"><div class="logo2">Logo</div></button>
-      <div class="navigation-links" id="nav-links">
-        <div class="home">Home</div>
-        <div class="servios">Serviços</div>
-        <div class="sobre-ns">Sobre nós</div>
-        <div class="contato">Contato</div>
-      </div>
-    </header>
+  <button class="logo"><div class="logo2">Logo</div></button>
+  <div class="navigation-links" id="nav-links">
+    <a class="home" href="#home">Home</a>
+    <a class="servios" href="#servicos">Serviços</a>
+    <a class="sobre-ns" href="#sobre">Sobre nós</a>
+    <a class="contato" href="#contato">Contato</a>
+  </div>
+  </header>

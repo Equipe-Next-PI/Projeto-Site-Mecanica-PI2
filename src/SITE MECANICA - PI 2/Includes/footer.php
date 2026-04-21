@@ -45,7 +45,7 @@
         <div class="oil-change-detail">
           <div class="top-icon">
             <img class="icon-ionicons-outline-bu" loading="lazy" alt=""
-              src="./assets/icons/icon-ionicons-outline-build-outline.svg" />
+              src="./assets/icons/icon-ionicons-filled-chevron-up.svg" />
           </div>
           <div class="retornar-ao-inicio">Retornar ao início</div>
         </div>

@@ -1,12 +1,20 @@
 /* ============================================================
-   INDEX.CSS — Mecânica NEXT
-   Otimizado e 100% responsivo
+   Mecânica NEXT
    ============================================================ */
 *, *::before, *::after { box-sizing: border-box; }
 
+html {
+    scroll-behavior: smooth;
+}
+
+section {
+    scroll-margin-top: 120px; 
+}
+
+
 .root {
   width: 100%;
-  background-color: var(--color-white);
+  background-color: var(--color-whitesmoke);
   overflow-x: hidden;
   display: flex;
   flex-direction: column;
@@ -55,6 +63,16 @@
   color: var(--color-white);
   padding: 0 20px;
   cursor: pointer;
+}
+
+
+.navigation-links a {
+  text-decoration: none;
+  color: var(--color-white); 
+}
+
+.navigation-links a:hover {
+  opacity: 0.8;
 }
 
 /* ============================================================
@@ -288,6 +306,70 @@
   text-align: center;
 }
 
+/* ============================================================
+   ESTATÍSTICAS (NOVO DESIGN EM CARTÃO)
+   ============================================================ */
+.statistics-section {
+  width: 100%;
+  background-color: var(--color-whitesmoke); /* Mantém o fundo da página cinza para o cartão branco destacar */
+  padding: 60px 40px;
+  display: flex;
+  justify-content: center;
+}
+
+.statistics-card {
+  background-color: var(--color-white);
+  border-radius: 12px;
+  padding: 50px 80px;
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* Cria as duas colunas */
+  gap: 40px 80px; /* Espaço vertical e horizontal entre os itens */
+  box-shadow: 0 4px 20px rgba(0,0,0,0.05); /* Sombreado leve */
+  width: 100%;
+  max-width: 900px;
+}
+
+.stat-item {
+  display: flex;
+  align-items: center; /* Alinha o ícone com o texto */
+  gap: 20px;
+}
+
+.stat-icon {
+  width: 35px;
+  height: 35px;
+  /* DICA DE OURO: Se os seus SVGs estiverem pretos, este filtro força-os a ficar da cor Laranja da imagem! */
+  filter: invert(49%) sepia(85%) saturate(2258%) hue-rotate(359deg) brightness(101%) contrast(104%);
+}
+
+.stat-text {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.stat-number {
+  font-family: var(--font-montserrat);
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--color-gray-300);
+}
+
+.stat-desc {
+  font-family: var(--font-montserrat);
+  font-size: 14px;
+  color: var(--color-dimgray);
+}
+
+/* Responsividade: No telemóvel, a grelha passa a ter apenas 1 coluna */
+@media screen and (max-width: 700px) {
+  .statistics-card {
+    grid-template-columns: 1fr;
+    padding: 30px;
+    gap: 30px;
+  }
+}
+
 .experience-counter { font-size: 36px; }
 
 .about-paragraph { flex: 1 1 400px; }
@@ -382,6 +464,73 @@
 
 .map-interface { display: flex; gap: 20px; }
 .map-location iframe { border-radius: 10px; }
+
+/* ============================================================
+   MAPA E CONTATOS (ALINHAMENTO CORRIGIDO)
+   ============================================================ */
+.map-area {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  width: 100%;
+}
+
+.mapa {
+  font-family: var(--font-montserrat);
+  font-size: 20px;
+  color: var(--color-black);
+}
+
+.map-interface {
+  display: flex;
+  align-items: center; /* Alinha o mapa e a lista lado a lado no meio */
+  gap: 30px;
+  width: 100%;
+}
+
+.map-location {
+  flex: 1; /* Faz o mapa ocupar metade do espaço */
+  min-width: 200px;
+}
+
+.map-location iframe {
+  border-radius: 10px;
+  width: 100%;
+  height: 120px;
+  object-fit: cover;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1); /* Dá um sombreado sutil para destacar */
+}
+
+.contact-list-right {
+  flex: 1; /* Faz os textos ocuparem a outra metade */
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.contact-item {
+  display: flex;
+  align-items: center; /* Segredo do alinhamento: centraliza o ícone com a frase */
+  gap: 15px;
+  font-family: var(--font-montserrat);
+  font-size: 14px;
+  color: var(--color-black);
+  line-height: 1.4;
+}
+
+.contact-icon {
+  width: 20px;
+  height: 20px;
+  flex-shrink: 0; /* Impede que o ícone fique esmagado se o texto for grande */
+}
+
+/* Responsividade: joga o texto para baixo do mapa no celular */
+@media screen and (max-width: 900px) {
+  .map-interface {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
 
 /* ============================================================
    FOOTER (RODAPÉ) - CORRIGIDO
