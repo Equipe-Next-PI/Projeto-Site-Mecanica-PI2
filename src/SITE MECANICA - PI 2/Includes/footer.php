@@ -4,8 +4,7 @@
         <div class="copyright-info">
           <div class="frame-parent5">
             <div class="lorem-ipsu-lorem-ipson-todos-wrapper">
-              <b class="lorem-ipsum-dolor">© 2026 lorem ipsum lorem ipsum. Todos os direitos
-                reservados.</b>
+              <b class="lorem-ipsum-dolor">© 2026 Mecânica NEXT. Todos os direitos reservados.</b>
             </div>
             <div class="criado-por-alickson">
               Criado por: Alickson Ramos - Vitor Hugo - Pedro Henrique
@@ -15,8 +14,7 @@
         <div class="operating-hours">
           <b class="horrio-de-funcionamento">Horário de funcionamento<br /></b>
           <div class="segunda-a-sexta">
-            Segunda a Sexta: 9h às 19h<br />Sábados: 9h às 17h<br />Domingos:
-            Fechado
+            Segunda a Sexta: 9h às 19h<br />Sábados: 9h às 17h<br />Domingos: Fechado
           </div>
         </div>
       </div>
@@ -35,11 +33,12 @@
         </div>
         <div class="address-footer">
           <div class="lorem-ipsum-dolor">
-            Rua das Flores, 123 Bairro Esperança, CEP 12345-678
+            Rua das Flores, 123 - Freguesia do Ó, SP
           </div>
           <div class="footer-street">(11) 98765-4321</div>
-          <div class="contatoemailcom"><a href="/cdn-cgi/l/email-protection" class="__cf_email__"
-              data-cfemail="dab9b5b4aebbaeb59abfb7bbb3b6f4b9b5b7">[email&#160;protected]</a></div>
+          <div class="contatoemailcom">
+            <a href="mailto:contato@oficinanext.com.br" style="color: inherit; text-decoration: none;">contato@oficinanext.com.br</a>
+          </div>
         </div>
       </div>
       <div class="back-to-top">
