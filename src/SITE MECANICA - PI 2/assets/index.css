@@ -188,6 +188,66 @@ section {
 }
 
 /* ============================================================
+   DESTAQUES (CARDS DE IMAGEM) - COM EFEITOS ANIMADOS
+   ============================================================ */
+.image-banner {
+  padding: 60px 40px;
+  background-color: var(--color-white);
+}
+
+.frame-group {
+  display: flex;
+  gap: 32px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.rectangle-parent {
+  flex: 1 1 300px;
+  position: relative;
+  border-radius: 20px;
+  overflow: hidden;
+  height: 280px;
+  cursor: pointer;
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.rectangle-parent:hover {
+  transform: translateY(-12px);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+}
+
+.frame-child {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s ease;
+}
+
+.rectangle-parent:hover .frame-child {
+  transform: scale(1.1);
+}
+
+.card-overlay-text {
+  position: absolute;
+  bottom: 0;
+  padding: 20px;
+  color: white;
+  font-family: var(--font-montserrat);
+  background: linear-gradient(transparent, rgba(0,0,0,0.9));
+  width: 100%;
+  
+  /* Prepara o texto para animar */
+  transition: padding-bottom 0.4s ease, background 0.4s ease;
+}
+
+/* Efeito 3 (Bônus): O texto sobe um pouquinho e o fundo escurece mais para facilitar a leitura */
+.rectangle-parent:hover .card-overlay-text {
+  padding-bottom: 30px;
+  background: linear-gradient(transparent, rgba(0,0,0,1));
+}
+
+/* ============================================================
    ESPECIALIDADES
    ============================================================ */
 .produtos {
