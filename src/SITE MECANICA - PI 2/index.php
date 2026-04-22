@@ -376,5 +376,3 @@
 </body>
 
 </html>
-
-/* code by Mrtorugo */

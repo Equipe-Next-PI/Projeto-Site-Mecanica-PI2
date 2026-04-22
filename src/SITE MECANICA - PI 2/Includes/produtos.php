@@ -28,11 +28,17 @@ $produtos_cadastrados = [
         "nome" => "Filtro de Ar Esportivo",
         "descricao" => "Aumenta o fluxo de ar e melhora o desempenho do veículo.",
         "preco" => "85,00"
+    ],
+    [
+        "imagem" => "./assets/img/forms.png",
+        "nome" => "Filtro de Ar Esportivo",
+        "descricao" => "Aumenta o fluxo de ar e melhora o desempenho do veículo.",
+        "preco" => "85,00"
     ]
 ];
 ?>
 
-<main class="page-produtos">
+<main class="page-produtos" id="produtos">
     <div class="services-header-container" style="margin-top: 40px;">
         <h2 class="section-title">Nossos Produtos</h2>
         <div class="section-subtitle">

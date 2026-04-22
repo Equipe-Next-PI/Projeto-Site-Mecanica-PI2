@@ -62,6 +62,7 @@ section {
 
 .home,
 .servios,
+.produtos,
 .sobre-ns,
 .contato {
   font-size: var(--fs-20);
@@ -267,6 +268,7 @@ section {
    ============================================================ */
 
 .services-header-container {
+  padding-top: 40px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -738,8 +740,8 @@ section {
 }
 
 .services-background-icon {
-  width: 150px;
-  height: 150px;
+  width: 215px;
+  height: 200px;
   border-radius: 20px;
   object-fit: cover;
 }
