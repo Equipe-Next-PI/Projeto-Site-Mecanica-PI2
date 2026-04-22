@@ -1,0 +1,980 @@
+/* ============================================================
+   Mecânica NEXT
+   ============================================================ */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+section {
+  scroll-margin-top: 120px;
+}
+
+.root {
+  width: 100%;
+  background-color: var(--color-whitesmoke);
+  overflow-x: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+/* NAVBAR */
+.nav {
+  width: 100%;
+  background-color: var(--Principal);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 40px;
+  height: 72px;
+  position: sticky;
+  top: 0;
+  z-index: 999;
+}
+
+.logo {
+  cursor: pointer;
+  border: 0;
+  padding: 8px 24px;
+  background-color: var(--color-gray-100);
+  display: flex;
+  align-items: center;
+  height: 48px;
+  border-radius: 4px;
+}
+
+.logo2 {
+  font-size: var(--fs-16);
+  font-family: var(--font-montserrat);
+  font-weight: 600;
+  color: var(--color-white);
+}
+
+.navigation-links {
+  display: flex;
+  align-items: center;
+}
+
+.home,
+.servios,
+.sobre-ns,
+.contato {
+  font-size: var(--fs-20);
+  font-family: var(--font-montserrat);
+  color: var(--color-white);
+  padding: 0 20px;
+  cursor: pointer;
+}
+
+.navigation-links a {
+  text-decoration: none;
+  color: var(--color-white);
+}
+
+.navigation-links a:hover {
+  opacity: 0.8;
+}
+
+/* ============================================================
+   SLIDER (SWIPER) - TELA CHEIA
+   ============================================================ */
+.mySwiper {
+  --swiper-navigation-color: var(--Destaque);
+  --swiper-pagination-color: var(--Destaque);
+  --swiper-navigation-size: 35px;
+}
+
+.swiper.mySwiper {
+  width: 100%;
+  max-width: 100%;
+  height: 550px;
+}
+
+.swiper-slide.card-carousel-parent {
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.card-carousel {
+  width: 100%;
+  max-width: 800px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  z-index: 10;
+  gap: 20px;
+}
+
+.lorem-ipson {
+  font-size: clamp(32px, 5vw, 64px);
+  font-weight: 700;
+  font-family: var(--font-montserrat);
+  color: var(--color-white);
+  margin: 0;
+}
+
+.lorem-ipsum-dolor {
+  font-family: var(--font-verdana);
+  font-size: var(--fs-16);
+  color: var(--color-white);
+}
+
+.cta-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  width: 100%;
+}
+
+.conhea,
+.component-3 {
+  cursor: pointer;
+  padding: 12px 30px;
+  border-radius: var(--br-20);
+  font-family: var(--font-montserrat);
+  font-size: var(--fs-16);
+  font-weight: 600;
+  color: var(--color-white);
+  transition: 0.3s;
+}
+
+.conhea {
+  background-color: var(--Destaque);
+  border: none;
+}
+.component-3 {
+  background-color: transparent;
+  border: 2px solid var(--color-white);
+}
+.conhea:hover {
+  background-color: var(--color-orangered);
+}
+
+/* ============================================================
+   DESTAQUES (CARDS DE IMAGEM)
+   ============================================================ */
+.image-banner {
+  padding: 60px 40px;
+  background-color: var(--color-white);
+}
+
+.frame-group {
+  display: flex;
+  gap: 32px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.rectangle-parent {
+  flex: 1 1 300px;
+  position: relative;
+  border-radius: 20px;
+  overflow: hidden;
+  height: 280px;
+}
+
+.frame-child {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.card-overlay-text {
+  position: absolute;
+  bottom: 0;
+  padding: 20px;
+  color: white;
+  font-family: var(--font-montserrat);
+  background: linear-gradient(transparent, rgba(0, 0, 0, 0.9));
+  width: 100%;
+}
+
+/* ============================================================
+   DESTAQUES (CARDS DE IMAGEM) - COM EFEITOS ANIMADOS
+   ============================================================ */
+.image-banner {
+  padding: 60px 40px;
+  background-color: var(--color-white);
+}
+
+.frame-group {
+  display: flex;
+  gap: 32px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.rectangle-parent {
+  flex: 1 1 300px;
+  position: relative;
+  border-radius: 20px;
+  overflow: hidden;
+  height: 280px;
+  cursor: pointer;
+  transition:
+    transform 0.4s ease,
+    box-shadow 0.4s ease;
+}
+
+.rectangle-parent:hover {
+  transform: translateY(-12px);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+}
+
+.frame-child {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s ease;
+}
+
+.rectangle-parent:hover .frame-child {
+  transform: scale(1.1);
+}
+
+.card-overlay-text {
+  position: absolute;
+  bottom: 0;
+  padding: 20px;
+  color: white;
+  font-family: var(--font-montserrat);
+  background: linear-gradient(transparent, rgba(0, 0, 0, 0.9));
+  width: 100%;
+  transition:
+    padding-bottom 0.4s ease,
+    background 0.4s ease;
+}
+
+.rectangle-parent:hover .card-overlay-text {
+  padding-bottom: 30px;
+  background: linear-gradient(transparent, rgba(0, 0, 0, 1));
+}
+
+/* ============================================================
+   ESPECIALIDADES
+   ============================================================ */
+
+.services-header-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  margin-bottom: 40px; /* Dá um respiro antes de começar os cards */
+  width: 100%;
+}
+
+.section-title {
+  font-family: var(--font-montserrat);
+  font-size: clamp(28px, 4vw, 36px); /* Fica responsivo no celular */
+  font-weight: 700; /* Texto bem em negrito */
+  color: var(--color-black);
+  margin: 0 0 10px 0;
+}
+
+.section-subtitle {
+  font-family: var(--font-montserrat);
+  font-size: 16px;
+  font-weight: 500;
+  color: var(--color-black);
+  display: flex;
+  align-items: center;
+  gap: 8px; /* Espaço entre o texto e a estrela */
+}
+
+.star-icon {
+  color: var(--Destaque); /* Puxa o laranja do seu global.css */
+  font-size: 20px;
+}
+
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3 colunas como no protótipo */
+  gap: 24px;
+  width: 100%;
+}
+
+.flip-card {
+  background-color: transparent;
+  min-height: 110px;
+  perspective: 1000px; /* Cria a profundidade 3D na tela */
+  cursor: pointer;
+}
+
+.flip-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.6s ease;
+  transform-style: preserve-3d;
+}
+
+.flip-card.is-flipped .flip-card-inner {
+  transform: rotateY(180deg);
+}
+
+.flip-card-front,
+.flip-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden; /* Esconde o verso da div no Safari */
+  backface-visibility: hidden; /* Esconde o verso nos outros navegadores */
+  background-color: var(--Equipe-NEXT-Azul-0);
+  border-radius: var(--br-20);
+  box-shadow: var(--shadow-drop);
+  display: flex;
+  justify-content: space-between;
+  align-items: stretch;
+  overflow: hidden;
+}
+
+.flip-card-back {
+  transform: rotateY(180deg);
+}
+
+.card-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 15px 20px;
+}
+
+.card-title {
+  font-family: var(--font-montserrat);
+  font-weight: 600;
+  font-size: 15px;
+  color: var(--color-black);
+  margin: 0 0 8px 0;
+}
+
+.chevron-icon {
+  width: 24px;
+  height: 24px;
+}
+
+.flip-card-back p {
+  font-family: var(--font-montserrat);
+  font-size: 13px;
+  color: var(--color-dimgray);
+  margin: 0;
+  line-height: 1.5;
+}
+
+.orange-bar {
+  width: 15px;
+  background-color: var(--Destaque);
+  flex-shrink: 0;
+}
+
+/* Responsividade para celular: 1 coluna */
+@media screen and (max-width: 900px) {
+  .services-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ============================================================
+   TELA DE PRODUTOS
+   ============================================================ */
+.page-produtos {
+  width: 100%;
+  background-color: var(--color-whitesmoke);
+  padding-bottom: 80px;
+  min-height: 70vh; /* Garante que o footer fique lá embaixo se houver poucos produtos */
+}
+
+.products-grid-container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 40px;
+}
+
+.products-grid {
+  display: grid;
+  /* Cria uma grade fluida: os cards se ajustam sozinhos na tela */
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 30px;
+  margin-top: 40px;
+}
+
+.product-card {
+  background-color: var(--color-white);
+  border-radius: var(--br-20);
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.product-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 25px rgba(0,0,0,0.15);
+}
+
+.product-image-wrapper {
+  width: 100%;
+  height: 200px;
+  background-color: var(--color-gainsboro-200);
+  overflow: hidden;
+}
+
+.product-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.product-card:hover .product-image {
+  transform: scale(1.08); /* Efeito sutil de zoom na imagem */
+}
+
+.product-info {
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.product-name {
+  font-family: var(--font-montserrat);
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--color-black);
+  margin: 0 0 10px 0;
+}
+
+.product-desc {
+  font-family: var(--font-montserrat);
+  font-size: 13px;
+  color: var(--color-dimgray);
+  line-height: 1.5;
+  margin: 0 0 20px 0;
+  flex: 1; /* Empurra o preço e o botão para o fundo do card */
+}
+
+.product-price-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: auto;
+}
+
+.product-price {
+  font-family: var(--font-montserrat);
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--Destaque);
+}
+
+.btn-buy {
+  background-color: var(--Destaque);
+  color: var(--color-white);
+  border: none;
+  border-radius: var(--br-10);
+  padding: 10px 20px;
+  font-family: var(--font-montserrat);
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.btn-buy:hover {
+  background-color: var(--color-orangered);
+}
+
+/* Responsividade Mobile */
+@media screen and (max-width: 600px) {
+  .products-grid-container {
+    padding: 0 20px;
+  }
+}
+
+/* ============================================================
+   SOBRE NÓS
+   ============================================================ */
+.about-container-wrapper {
+  padding: 80px 40px;
+}
+
+.about-content {
+  display: flex;
+  gap: 60px;
+  flex-wrap: wrap;
+}
+
+.about-description {
+  flex: 1 1 300px;
+  position: relative;
+}
+
+.image-4-icon {
+  width: 100%;
+  height: 380px;
+  object-fit: cover;
+  border-radius: var(--br-10);
+}
+
+.years-experience {
+  position: absolute;
+  right: -20px;
+  bottom: -20px;
+  background-color: var(--Destaque);
+  padding: 20px;
+  border-radius: var(--br-10);
+  color: white;
+  text-align: center;
+}
+
+/* ============================================================
+   ESTATÍSTICAS (NOVO DESIGN EM CARTÃO)
+   ============================================================ */
+.statistics-section {
+  width: 100%;
+  background-color: var(
+    --color-whitesmoke
+  ); /* Mantém o fundo da página cinza para o cartão branco destacar */
+  padding: 60px 40px;
+  display: flex;
+  justify-content: center;
+}
+
+.statistics-card {
+  background-color: var(--color-white);
+  border-radius: 12px;
+  padding: 50px 80px;
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* Cria as duas colunas */
+  gap: 40px 80px; /* Espaço vertical e horizontal entre os itens */
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05); /* Sombreado leve */
+  width: 100%;
+  max-width: 900px;
+}
+
+.stat-item {
+  display: flex;
+  align-items: center; /* Alinha o ícone com o texto */
+  gap: 20px;
+}
+
+.stat-icon {
+  width: 35px;
+  height: 35px;
+  /* DICA DE OURO: Se os seus SVGs estiverem pretos, este filtro força-os a ficar da cor Laranja da imagem! */
+  filter: invert(49%) sepia(85%) saturate(2258%) hue-rotate(359deg)
+    brightness(101%) contrast(104%);
+}
+
+.stat-text {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.stat-number {
+  font-family: var(--font-montserrat);
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--color-gray-300);
+}
+
+.stat-desc {
+  font-family: var(--font-montserrat);
+  font-size: 14px;
+  color: var(--color-dimgray);
+}
+
+/* Responsividade: No telemóvel, a grelha passa a ter apenas 1 coluna */
+@media screen and (max-width: 700px) {
+  .statistics-card {
+    grid-template-columns: 1fr;
+    padding: 30px;
+    gap: 30px;
+  }
+}
+
+.experience-counter {
+  font-size: 36px;
+}
+
+.about-paragraph {
+  flex: 1 1 400px;
+}
+.sobre-a-lorem {
+  font-family: var(--font-montserrat);
+  font-size: 24px;
+}
+.nossa-oficina-mecnica {
+  font-family: var(--font-montserrat);
+  line-height: 1.6;
+}
+
+/* ============================================================
+   ESTATÍSTICAS
+   ============================================================ */
+.statistics-container {
+  display: flex;
+  justify-content: center;
+  padding: 0 20px 60px;
+}
+
+.cards {
+  display: flex;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+.experience-card,
+.client-certifications {
+  display: flex;
+  gap: 12px;
+}
+.anos,
+.aprov,
+.clientes,
+.cert {
+  background-color: var(--color-gainsboro-300);
+  padding: 15px 20px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+/* ============================================================
+   FORMULÁRIO E CONTATO
+   ============================================================ */
+.form-container-wrapper {
+  padding: 60px 40px;
+  background-color: #f4f7f9;
+}
+
+.form-container {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 40px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.form-contato {
+  background-color: var(--color-gainsboro-100);
+  padding: 40px;
+  border-radius: 20px;
+}
+
+.solicite-um-oramento {
+  font-family: var(--font-montserrat);
+  font-size: 20px;
+  font-weight: 600;
+  margin-bottom: 20px;
+}
+
+.input-fields {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+.input-pair {
+  display: flex;
+  gap: 15px;
+}
+.input-nome,
+.input-email,
+.input-tel,
+.input-cel,
+.input-marca,
+.input-modelo,
+.input-tipo,
+.input-desc {
+  width: 100%;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 20px;
+  font-family: var(--font-montserrat);
+}
+
+.input-desc {
+  min-height: 100px;
+  resize: none;
+}
+.btn-submit {
+  width: 100%;
+  padding: 15px;
+  background-color: var(--Destaque);
+  color: white;
+  border: none;
+  border-radius: 20px;
+  font-weight: 600;
+  margin-top: 15px;
+  cursor: pointer;
+}
+
+.nossoserv {
+  background-color: var(--Destaque);
+  padding: 24px;
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  color: white;
+  margin-bottom: 20px;
+}
+
+.services-background-icon {
+  width: 150px;
+  height: 150px;
+  border-radius: 20px;
+  object-fit: cover;
+}
+.manuteno-preventiva-reparos {
+  padding-left: 20px;
+  line-height: 1.8;
+}
+
+.map-interface {
+  display: flex;
+  gap: 20px;
+}
+.map-location iframe {
+  border-radius: 10px;
+}
+
+/* ============================================================
+   MAPA E CONTATOS (ALINHAMENTO CORRIGIDO)
+   ============================================================ */
+.map-area {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  width: 100%;
+}
+
+.mapa {
+  font-family: var(--font-montserrat);
+  font-size: 20px;
+  color: var(--color-black);
+}
+
+.map-interface {
+  display: flex;
+  align-items: center; /* Alinha o mapa e a lista lado a lado no meio */
+  gap: 30px;
+  width: 100%;
+}
+
+.map-location {
+  flex: 1; /* Faz o mapa ocupar metade do espaço */
+  min-width: 200px;
+}
+
+.map-location iframe {
+  border-radius: 10px;
+  width: 100%;
+  height: 120px;
+  object-fit: cover;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Dá um sombreado sutil para destacar */
+}
+
+.contact-list-right {
+  flex: 1; /* Faz os textos ocuparem a outra metade */
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.contact-item {
+  display: flex;
+  align-items: center; /* Segredo do alinhamento: centraliza o ícone com a frase */
+  gap: 15px;
+  font-family: var(--font-montserrat);
+  font-size: 14px;
+  color: var(--color-black);
+  line-height: 1.4;
+}
+
+.contact-icon {
+  width: 20px;
+  height: 20px;
+  flex-shrink: 0; /* Impede que o ícone fique esmagado se o texto for grande */
+}
+
+/* Responsividade: joga o texto para baixo do mapa no celular */
+@media screen and (max-width: 900px) {
+  .map-interface {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+/* ============================================================
+   FOOTER (RODAPÉ) - CORRIGIDO
+   ============================================================ */
+.footer {
+  width: 100%;
+  background-color: var(--Principal); /* Puxa o Azul Escuro do Senac/Chubb */
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  padding: 48px 80px 32px;
+  gap: 32px;
+  font-family: var(--font-rubik);
+  font-size: var(--fs-12);
+  color: var(--Apoio);
+}
+
+.footer-content {
+  display: flex;
+  gap: 48px;
+  flex-wrap: wrap;
+  align-items: flex-start;
+}
+
+.copyright-info {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.lorem-ipsum-dolor {
+  font-family: var(--font-rubik);
+  font-size: var(--fs-12);
+  font-weight: 700;
+  color: var(--Apoio);
+  margin-bottom: 5px;
+}
+
+.criado-por-alickson {
+  font-family: var(--font-nunito);
+  font-size: 10px;
+  color: var(--Apoio);
+}
+
+.operating-hours {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.horrio-de-funcionamento {
+  font-weight: 700;
+  margin-bottom: 5px;
+  color: var(--Apoio);
+}
+
+.segunda-a-sexta {
+  line-height: 1.6;
+  color: var(--Apoio);
+}
+
+.contact-footer {
+  display: flex;
+  gap: 15px;
+}
+
+.address-contact {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding-top: 2px;
+}
+
+.icon-heroicons-solid-loc2 {
+  width: 18px;
+  height: 18px;
+}
+
+.address-footer {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.footer-street,
+.contatoemailcom {
+  font-family: var(--font-rubik);
+  color: var(--Apoio);
+}
+
+.contatoemailcom a {
+  color: var(--Apoio);
+  text-decoration: none;
+}
+
+.contatoemailcom a:hover {
+  text-decoration: underline;
+}
+
+.back-to-top {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  cursor: pointer;
+  gap: 5px;
+}
+
+.retornar-ao-inicio {
+  font-weight: 500;
+  color: var(--Apoio);
+}
+
+/* Responsividade do Footer */
+@media screen and (max-width: 900px) {
+  .footer {
+    padding: 40px 30px;
+    flex-direction: column;
+    gap: 30px;
+  }
+  .footer-content {
+    flex-direction: column;
+    gap: 20px;
+  }
+}
+
+/* ============================================================
+   RESPONSIVIDADE (MOBILE & TABLET)
+   ============================================================ */
+@media screen and (max-width: 900px) {
+  .oil-change-card,
+  .injection-card,
+  .brakes-card,
+  .form-container {
+    grid-template-columns: 1fr;
+  }
+  .nossoserv {
+    flex-direction: column;
+    text-align: center;
+  }
+  .map-interface {
+    flex-direction: column;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .nav {
+    padding: 0 15px;
+  }
+  .cta-buttons {
+    flex-direction: column;
+  }
+  .input-pair {
+    flex-direction: column;
+  }
+}

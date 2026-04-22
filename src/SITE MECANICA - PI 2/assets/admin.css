@@ -1,0 +1,167 @@
+/* ============================================================
+   ADMIN.CSS — Painel de Administração NEXT
+   ============================================================ */
+body {
+  background-color: #f0f2f5; /* Fundo cinza claro para destacar a tabela */
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* Navbar Admin */
+.admin-nav {
+  background-color: var(--Principal);
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 40px;
+}
+
+.admin-nav .logo {
+  background-color: #334d6e;
+  padding: 5px 20px;
+  border-radius: 4px;
+}
+
+.admin-nav-links {
+  display: flex;
+  gap: 30px;
+}
+
+.admin-nav-links a {
+  color: white;
+  text-decoration: none;
+  font-family: var(--font-montserrat);
+  font-size: 14px;
+}
+
+.admin-nav-links a.active {
+  font-weight: bold;
+  border-bottom: 2px solid white;
+}
+
+
+.admin-container {
+  display: grid;
+  grid-template-columns: 1fr 350px; 
+  flex: 1; 
+}
+
+
+.admin-content {
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+}
+
+.content-header {
+  background-color: white;
+  padding: 20px 40px;
+  border-bottom: 2px solid #e0e0e0;
+  margin: -40px -40px 40px -40px; /* Estica o título até as bordas */
+}
+
+.content-header h1 {
+  font-family: var(--font-montserrat);
+  font-size: 24px;
+  margin: 0;
+  color: var(--color-gray-300);
+}
+
+.table-container {
+  background-color: white;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.admin-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-family: var(--font-montserrat);
+  font-size: 14px;
+}
+
+.admin-table th, .admin-table td {
+  padding: 15px 20px;
+  text-align: left;
+  border-bottom: 1px solid #e0e0e0;
+  border-right: 1px solid #e0e0e0; /* Linhas verticais do protótipo */
+}
+
+.admin-table th {
+  background-color: #f8f9fa;
+  font-weight: 600;
+  color: #555;
+}
+
+.admin-table tr:nth-child(even) {
+  background-color: #fdfdfd; /* Zebrado muito sutil */
+}
+
+/* Lado Direito: Barra Laranja (Formulário) */
+.admin-sidebar {
+  background-color: var(--Destaque); /* Laranja NEXT */
+  padding: 40px 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.search-box {
+  width: 100%;
+}
+
+.search-input {
+  width: 100%;
+  padding: 12px 15px;
+  border-radius: 20px;
+  border: none;
+  font-family: var(--font-montserrat);
+  font-weight: 600;
+  outline: none;
+}
+
+.form-container h3 {
+  font-family: var(--font-montserrat);
+  color: white;
+  font-size: 16px;
+  font-weight: 600;
+  margin-top: 0;
+  margin-bottom: 20px;
+}
+
+.admin-form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.admin-form input, .admin-form textarea {
+  width: 100%;
+  padding: 12px 15px;
+  border-radius: 8px;
+  border: none;
+  font-family: var(--font-montserrat);
+  font-size: 14px;
+  resize: none; /* Impede o usuário de quebrar o layout da textarea */
+}
+
+.btn-salvar {
+  background-color: var(--Principal); /* Azul escuro */
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 12px;
+  font-family: var(--font-montserrat);
+  font-weight: bold;
+  cursor: pointer;
+  margin-top: 10px;
+  transition: 0.3s;
+}
+
+.btn-salvar:hover {
+  background-color: #12223a;
+}
