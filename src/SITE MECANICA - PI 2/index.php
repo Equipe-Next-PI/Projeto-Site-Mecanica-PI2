@@ -216,6 +216,8 @@
       </div>
     </section>
 
+    <?php include_once('./Includes/produtos.php'); ?>
+
     <section class="divisoria-cont"></section>
 
     <section id="sobre" class="about-container-wrapper">
@@ -374,3 +376,5 @@
 </body>
 
 </html>
+
+/* code by Mrtorugo */
