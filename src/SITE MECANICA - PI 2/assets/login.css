@@ -1,0 +1,320 @@
+/* ============================================================
+   ESTILOS DA TELA DE LOGIN / REGISTO
+   ============================================================ */
+
+body {
+    background-color: var(--Principal); /* O fundo azul escuro base */
+    font-family: var(--font-montserrat);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    overflow: hidden;
+}
+
+h1 {
+    color: white;
+    font-weight: 600;
+    margin-bottom: 30px;
+    font-size: 28px;
+    text-transform: lowercase; /* Para deixar "login" como no protótipo */
+}
+
+/* O contentor que segura tudo no meio do ecrã */
+.login-wrapper {
+    background-color: var(--Principal);
+    position: relative;
+    overflow: hidden;
+    width: 900px;
+    max-width: 100%;
+    min-height: 550px;
+    border-radius: 20px;
+    box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+}
+
+/* Contentores dos formulários (cada um ocupa 50%) */
+.form-container {
+    position: absolute;
+    top: 0;
+    height: 100%;
+    width: 50%;
+    transition: all 0.6s ease-in-out;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Estado inicial: Login visível (direita) */
+.sign-in-container {
+    left: 50%;
+    z-index: 2;
+}
+
+/* Quando ativa o Registo, o Login vai para a esquerda e desaparece */
+.login-wrapper.right-panel-active .sign-in-container {
+    transform: translateX(-100%);
+    opacity: 0;
+    z-index: 1;
+}
+
+/* Estado inicial: Registo escondido (esquerda) */
+.sign-up-container {
+    left: 0;
+    opacity: 0;
+    z-index: 1;
+}
+
+/* Quando ativa o Registo, ele aparece */
+.login-wrapper.right-panel-active .sign-up-container {
+    transform: translateX(0);
+    opacity: 1;
+    z-index: 5;
+    animation: show 0.6s;
+}
+
+@keyframes show {
+    0%, 49.99% { opacity: 0; z-index: 1; }
+    50%, 100% { opacity: 1; z-index: 5; }
+}
+
+/* Estilo visual da caixa cinzenta do formulário */
+form {
+    background-color: rgba(255, 255, 255, 0.15); /* Fundo cinzento semi-transparente */
+    backdrop-filter: blur(10px); /* Efeito de vidro esfocado */
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 40px;
+    height: 80%;
+    width: 80%;
+    text-align: center;
+}
+
+input {
+    background-color: #e6e6e6;
+    border: none;
+    padding: 14px 20px;
+    margin: 8px 0;
+    width: 100%;
+    border-radius: 25px; /* Campos de texto arredondados */
+    font-family: var(--font-montserrat);
+    font-size: 14px;
+    outline: none;
+}
+
+/* Botões e Links no fundo do formulário */
+.links-actions {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    margin-top: 30px;
+}
+
+.links-actions .btn-toggle {
+    color: white;
+    text-decoration: none;
+    font-size: 14px;
+    cursor: pointer;
+    background: none;
+    border: none;
+    font-family: var(--font-montserrat);
+    opacity: 0.8;
+}
+
+.links-actions .btn-toggle:hover {
+    opacity: 1;
+    text-decoration: underline;
+}
+
+.links-actions .btn-submit {
+    color: white;
+    background: none;
+    border: none;
+    font-size: 14px;
+    font-weight: 700;
+    cursor: pointer;
+    font-family: var(--font-montserrat);
+    padding: 0;
+}
+
+.links-actions .btn-submit:hover {
+    text-decoration: underline;
+}
+
+/* ============================================================
+   A ONDA MÁGICA (OVERLAY LARANJA)
+   ============================================================ */
+.overlay-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 50%;
+    height: 100%;
+    overflow: hidden;
+    transition: transform 0.6s ease-in-out;
+    z-index: 100;
+}
+
+.login-wrapper.right-panel-active .overlay-container {
+    transform: translateX(100%);
+}
+
+.overlay {
+    background-color: var(--Destaque); /* O Laranja da Equipa NEXT */
+    color: #FFFFFF;
+    position: relative;
+    left: 0;
+    height: 100%;
+    width: 200%;
+    transform: translateX(0);
+    transition: transform 0.6s ease-in-out, border-radius 0.6s ease-in-out;
+    
+    /* Cria a curva (onda) no lado direito do painel laranja */
+    border-radius: 0 40% 40% 0 / 0 10% 10% 0; 
+}
+
+.login-wrapper.right-panel-active .overlay {
+    transform: translateX(-50%);
+    /* Quando vai para a direita, a curva passa para o lado esquerdo */
+    border-radius: 40% 0 0 40% / 10% 0 0 10%;
+}
+
+.overlay-panel {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+    top: 0;
+    height: 100%;
+    width: 50%;
+    transform: translateX(0);
+    transition: transform 0.6s ease-in-out;
+}
+
+.overlay-left {
+    left: 0;
+    transform: translateX(0);
+}
+
+.login-wrapper.right-panel-active .overlay-left {
+    transform: translateX(-20%);
+}
+
+.overlay-right {
+    right: 0;
+    transform: translateX(20%);
+}
+
+.login-wrapper.right-panel-active .overlay-right {
+    transform: translateX(0);
+}
+
+/* Estilo do Logótipo */
+.logo-next {
+    font-size: 20px;
+    letter-spacing: 1px;
+}
+
+.logo-next span {
+    font-weight: 700;
+    font-size: 32px;
+}
+
+
+/* ============================================================
+   RESPONSIVIDADE (MOBILE)
+   ============================================================ */
+@media screen and (max-width: 768px) {
+
+    .login-wrapper {
+        width: 100%;
+        height: 100vh; 
+        min-height: 100vh;
+        border-radius: 0;
+        box-shadow: none;
+    }
+
+
+    .overlay-container {
+        display: none;
+    }
+
+    .form-container {
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        transition: transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    }
+
+    /* Posição inicial: Login no centro, Registro fora da tela (à direita) */
+    .sign-in-container {
+        left: 0;
+        opacity: 1 !important;
+        transform: translateX(0);
+    }
+
+    .sign-up-container {
+        left: 0;
+        opacity: 1 !important; 
+        transform: translateX(100%);
+        animation: none !important; 
+    }
+
+    .login-wrapper.right-panel-active .sign-in-container {
+        transform: translateX(-100%);
+    }
+
+    .login-wrapper.right-panel-active .sign-up-container {
+        transform: translateX(0);
+    }
+
+    form {
+        background-color: var(--Principal); 
+        border-radius: 0;
+        width: 100%;
+        height: 100%;
+        padding: 40px 30px;
+        justify-content: center;
+    }
+
+    h1 {
+        font-size: 32px;
+        margin-bottom: 40px;
+        color: var(--Destaque); 
+    }
+
+    input {
+        padding: 16px 20px; 
+        font-size: 16px;
+        margin: 10px 0;
+    }
+
+    .links-actions {
+        flex-direction: column;
+        gap: 25px;
+        align-items: center;
+        margin-top: 40px;
+    }
+
+    .links-actions .btn-submit {
+        width: 100%;
+        padding: 16px !important;
+        background-color: var(--Destaque) !important;
+        color: white;
+        border-radius: 30px !important;
+        font-size: 16px;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+    }
+
+    .links-actions .btn-toggle {
+        font-size: 15px;
+        color: #b0c4de;
+    }
+}
