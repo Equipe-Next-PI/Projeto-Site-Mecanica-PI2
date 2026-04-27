@@ -19,6 +19,7 @@
     <div class="navigation-links" id="nav-links">
       <a class="home" href="#home">Home</a>
       <a class="servios" href="#servicos">Serviços</a>
+      <a class="produtos" href="#produtos">Produtos</a>
       <a class="sobre-ns" href="#sobre">Sobre nós</a>
       <a class="contato" href="#contato">Contato</a>
     </div>

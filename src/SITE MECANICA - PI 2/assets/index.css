@@ -62,6 +62,7 @@ section {
 
 .home,
 .servios,
+.produtos,
 .sobre-ns,
 .contato {
   font-size: var(--fs-20);
@@ -202,7 +203,7 @@ section {
 }
 
 /* ============================================================
-   DESTAQUES (CARDS DE IMAGEM) - COM EFEITOS ANIMADOS
+   DESTAQUES (CARDS DE IMAGEM)
    ============================================================ */
 .image-banner {
   padding: 60px 40px;
@@ -267,18 +268,19 @@ section {
    ============================================================ */
 
 .services-header-container {
+  padding-top: 40px;
   display: flex;
   flex-direction: column;
   align-items: center;
   text-align: center;
-  margin-bottom: 40px; /* Dá um respiro antes de começar os cards */
+  margin-bottom: 40px; 
   width: 100%;
 }
 
 .section-title {
   font-family: var(--font-montserrat);
-  font-size: clamp(28px, 4vw, 36px); /* Fica responsivo no celular */
-  font-weight: 700; /* Texto bem em negrito */
+  font-size: clamp(28px, 4vw, 36px); 
+  font-weight: 700; 
   color: var(--color-black);
   margin: 0 0 10px 0;
 }
@@ -290,17 +292,17 @@ section {
   color: var(--color-black);
   display: flex;
   align-items: center;
-  gap: 8px; /* Espaço entre o texto e a estrela */
+  gap: 8px; 
 }
 
 .star-icon {
-  color: var(--Destaque); /* Puxa o laranja do seu global.css */
+  color: var(--Destaque); 
   font-size: 20px;
 }
 
 .services-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr); /* 3 colunas como no protótipo */
+  grid-template-columns: repeat(3, 1fr); 
   gap: 24px;
   width: 100%;
 }
@@ -308,7 +310,7 @@ section {
 .flip-card {
   background-color: transparent;
   min-height: 110px;
-  perspective: 1000px; /* Cria a profundidade 3D na tela */
+  perspective: 1000px; 
   cursor: pointer;
 }
 
@@ -329,8 +331,8 @@ section {
   position: absolute;
   width: 100%;
   height: 100%;
-  -webkit-backface-visibility: hidden; /* Esconde o verso da div no Safari */
-  backface-visibility: hidden; /* Esconde o verso nos outros navegadores */
+  -webkit-backface-visibility: hidden; 
+  backface-visibility: hidden; 
   background-color: var(--Equipe-NEXT-Azul-0);
   border-radius: var(--br-20);
   box-shadow: var(--shadow-drop);
@@ -381,7 +383,6 @@ section {
   flex-shrink: 0;
 }
 
-/* Responsividade para celular: 1 coluna */
 @media screen and (max-width: 900px) {
   .services-grid {
     grid-template-columns: 1fr;
@@ -395,7 +396,7 @@ section {
   width: 100%;
   background-color: var(--color-whitesmoke);
   padding-bottom: 80px;
-  min-height: 70vh; /* Garante que o footer fique lá embaixo se houver poucos produtos */
+  min-height: 70vh; 
 }
 
 .products-grid-container {
@@ -407,7 +408,6 @@ section {
 
 .products-grid {
   display: grid;
-  /* Cria uma grade fluida: os cards se ajustam sozinhos na tela */
   grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
   gap: 30px;
   margin-top: 40px;
@@ -443,7 +443,7 @@ section {
 }
 
 .product-card:hover .product-image {
-  transform: scale(1.08); /* Efeito sutil de zoom na imagem */
+  transform: scale(1.08); 
 }
 
 .product-info {
@@ -467,7 +467,7 @@ section {
   color: var(--color-dimgray);
   line-height: 1.5;
   margin: 0 0 20px 0;
-  flex: 1; /* Empurra o preço e o botão para o fundo do card */
+  flex: 1; 
 }
 
 .product-price-row {
@@ -544,13 +544,13 @@ section {
 }
 
 /* ============================================================
-   ESTATÍSTICAS (NOVO DESIGN EM CARTÃO)
+   ESTATÍSTICAS 
    ============================================================ */
 .statistics-section {
   width: 100%;
   background-color: var(
     --color-whitesmoke
-  ); /* Mantém o fundo da página cinza para o cartão branco destacar */
+  ); 
   padding: 60px 40px;
   display: flex;
   justify-content: center;
@@ -561,23 +561,22 @@ section {
   border-radius: 12px;
   padding: 50px 80px;
   display: grid;
-  grid-template-columns: 1fr 1fr; /* Cria as duas colunas */
-  gap: 40px 80px; /* Espaço vertical e horizontal entre os itens */
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05); /* Sombreado leve */
+  grid-template-columns: 1fr 1fr; 
+  gap: 40px 80px; 
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05); 
   width: 100%;
   max-width: 900px;
 }
 
 .stat-item {
   display: flex;
-  align-items: center; /* Alinha o ícone com o texto */
+  align-items: center; 
   gap: 20px;
 }
 
 .stat-icon {
   width: 35px;
   height: 35px;
-  /* DICA DE OURO: Se os seus SVGs estiverem pretos, este filtro força-os a ficar da cor Laranja da imagem! */
   filter: invert(49%) sepia(85%) saturate(2258%) hue-rotate(359deg)
     brightness(101%) contrast(104%);
 }
@@ -601,7 +600,6 @@ section {
   color: var(--color-dimgray);
 }
 
-/* Responsividade: No telemóvel, a grelha passa a ter apenas 1 coluna */
 @media screen and (max-width: 700px) {
   .statistics-card {
     grid-template-columns: 1fr;
@@ -738,8 +736,8 @@ section {
 }
 
 .services-background-icon {
-  width: 150px;
-  height: 150px;
+  width: 215px;
+  height: 200px;
   border-radius: 20px;
   object-fit: cover;
 }
@@ -774,13 +772,13 @@ section {
 
 .map-interface {
   display: flex;
-  align-items: center; /* Alinha o mapa e a lista lado a lado no meio */
+  align-items: center; 
   gap: 30px;
   width: 100%;
 }
 
 .map-location {
-  flex: 1; /* Faz o mapa ocupar metade do espaço */
+  flex: 1; 
   min-width: 200px;
 }
 
@@ -789,11 +787,11 @@ section {
   width: 100%;
   height: 120px;
   object-fit: cover;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Dá um sombreado sutil para destacar */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); 
 }
 
 .contact-list-right {
-  flex: 1; /* Faz os textos ocuparem a outra metade */
+  flex: 1; 
   display: flex;
   flex-direction: column;
   gap: 15px;
@@ -801,7 +799,7 @@ section {
 
 .contact-item {
   display: flex;
-  align-items: center; /* Segredo do alinhamento: centraliza o ícone com a frase */
+  align-items: center; 
   gap: 15px;
   font-family: var(--font-montserrat);
   font-size: 14px;
@@ -812,10 +810,9 @@ section {
 .contact-icon {
   width: 20px;
   height: 20px;
-  flex-shrink: 0; /* Impede que o ícone fique esmagado se o texto for grande */
+  flex-shrink: 0; 
 }
 
-/* Responsividade: joga o texto para baixo do mapa no celular */
 @media screen and (max-width: 900px) {
   .map-interface {
     flex-direction: column;
@@ -824,11 +821,11 @@ section {
 }
 
 /* ============================================================
-   FOOTER (RODAPÉ) - CORRIGIDO
+   FOOTER (RODAPÉ)
    ============================================================ */
 .footer {
   width: 100%;
-  background-color: var(--Principal); /* Puxa o Azul Escuro do Senac/Chubb */
+  background-color: var(--Principal); 
   display: flex;
   align-items: flex-start;
   justify-content: space-between;
