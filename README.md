@@ -18,8 +18,8 @@ O **Site para Oficina Mecânica** é uma solução web robusta desenvolvida pela
 O projeto segue uma estrutura organizada para garantir escalabilidade e facilidade de manutenção:
 
 - **Interface (Front-end):** HTML5, CSS3 (Bootstrap 5) e JavaScript (ES6+).
-- **Lógica de Negócio (Back-end):** PHP 8.x (ou Node.js), processando validações e regras de cálculo.
-- **Camada de Dados:** Banco de dados **MySQL** com integridade referencial.
+- **Lógica de Negócio (Back-end):** PHP 8.x, processando validações e regras de cálculo.
+- **Camada de Dados:** Banco de dados **MySQL** com integridade referencial utilizando PDO.
 
 ---
 
@@ -37,17 +37,49 @@ O projeto segue uma estrutura organizada para garantir escalabilidade e facilida
 
 ```text
 .
-├── sql/                  # Scripts de criação do banco (schema.sql)
+├── sql/                   # Scripts de criação do banco (schema.sql)
 ├── src/
-│   ├── config/           # Conexão com banco de dados
-│   ├── includes/         # Componentes reutilizáveis (Header, Footer)
-│   ├── modules/          # Lógica dividida por funcionalidades
-│   │   ├── estoque/      # Controle de peças
-│   ├── assets/           # CSS, Imagens e Bibliotecas JS
-│   └── index.php         # Dashboard Principal / Login
-└── .env.example          # Template de variáveis de ambiente
+│   ├── config/            # Conexão com banco de dados
+│   ├── includes/          # Componentes reutilizáveis (Header, Footer)
+│   ├── modules/           # Lógica dividida por funcionalidades
+│   │   ├── estoque/       # Controle de peças
+│   ├── assets/            # CSS, Imagens e Bibliotecas JS
+│   └── index.php          # Dashboard Principal / Login
+└── .env.example           # Template de variáveis de ambiente
 
 ```
+---
+
+### 🗄️ Modelagem do Banco de Dados
+
+O banco de dados relacional (`oficina_next`) foi projetado seguindo as regras da **Terceira Forma Normal (3FN)**, eliminando redundâncias e garantindo a integridade referencial por meio de *Foreign Keys* rigorosas.
+
+A arquitetura é composta por **5 tabelas principais**:
+
+- **`usuarios`**  
+  Gerencia o controle de acesso ao sistema.  
+  Utiliza restrição `UNIQUE` para e-mails e armazena senhas em formato *hash* (**BCRYPT**) para maior segurança.  
+  Diferencia clientes e administradores por meio de um campo `ENUM`.
+
+- **`produtos`**  
+  Funciona como o inventário da oficina.  
+  Registra peças e acessórios com controle preciso de estoque e valores financeiros utilizando o tipo `DECIMAL(10,2)`, evitando erros de arredondamento.
+
+- **`orcamentos`**  
+  Captura as solicitações dos clientes enviadas pelo front-end (Formulário de Contato).  
+  Armazena dados do veículo e a descrição do problema, operando com um sistema de status:
+  - `pendente`
+  - `lido`
+  - `concluido`
+
+- **`servicos`**  
+  Catálogo fixo das especialidades técnicas oferecidas pela oficina (ex: *Troca de Óleo*, *Alinhamento*).
+
+- **`itens_orcamento`** *(Tabela Associativa)*  
+  Considerado o núcleo da lógica de negócios.  
+  Resolve o relacionamento **N:M (Muitos-para-Muitos)** entre `orcamentos`, `servicos` e `produtos`.  
+  Permite que um único orçamento inclua múltiplos serviços e utilize diversas peças do estoque simultaneamente, aplicando regras de `ON DELETE CASCADE` para evitar a criação de dados órfãos.
+
 
 ---
 
