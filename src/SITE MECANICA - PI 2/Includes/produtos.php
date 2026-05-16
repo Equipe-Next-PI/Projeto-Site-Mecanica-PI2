@@ -1,42 +1,34 @@
 <?php
-// O header já traz o menu e as configurações de HTML
-include_once('./Includes/header.php');
+// 1. Inclui os componentes estruturais do topo
+require_once './includes/header.php';
 
-/* SIMULAÇÃO DO BANCO DE DADOS (Painel do Administrador)*/
+// 2. Importa a instância ativa do banco de dados
+require_once './config/conexao.php';
 
-$produtos_cadastrados = [
-    [
-        "imagem" => "./assets/img/cards.png",
-        "nome" => "Óleo de Motor Sintético 5W40",
-        "descricao" => "Proteção máxima para motores de alta performance.",
-        "preco" => "120,00"
-    ],
-    [
-        "imagem" => "./assets/img/cards.png",
-        "nome" => "Kit Pastilha de Freio",
-        "descricao" => "Pastilhas de cerâmica com alta durabilidade.",
-        "preco" => "250,00"
-    ],
-    [
-        "imagem" => "./assets/img/forms.png",
-        "nome" => "Bateria Automotiva 60Ah",
-        "descricao" => "Bateria selada livre de manutenção com 18 meses de garantia.",
-        "preco" => "450,00"
-    ],
-    [
-        "imagem" => "./assets/img/forms.png",
-        "nome" => "Filtro de Ar Esportivo",
-        "descricao" => "Aumenta o fluxo de ar e melhora o desempenho do veículo.",
-        "preco" => "85,00"
-    ],
-    [
-        "imagem" => "./assets/img/forms.png",
-        "nome" => "Filtro de Ar Esportivo",
-        "descricao" => "Aumenta o fluxo de ar e melhora o desempenho do veículo.",
-        "preco" => "85,00"
-    ]
-];
+try {
+    // 3. Prepara a query SQL de leitura
+    $stmt = $pdo->query("SELECT id, nome, descricao, preco, estoque, imagem FROM produtos WHERE estoque > 0");
+    $produtos = $stmt->fetchAll();
+} catch (PDOException $e) {
+    echo "Erro ao carregar o catálogo: " . $e->getMessage();
+}
 ?>
+
+<div class="products-grid">
+    <?php foreach ($produtos as $produto): ?>
+        <div class="product-card">
+            <img src="<?php echo htmlspecialchars($produto['imagem']); ?>" alt="Imagem do produto">
+            <h3>
+                <?php echo htmlspecialchars($produto['nome']); ?>
+            </h3>
+            <p>R$
+                <?php echo number_format($produto['preco'], 2, ',', '.'); ?>
+            </p>
+        </div>
+    <?php endforeach; ?>
+</div>
+
+<?php require_once './includes/footer.php'; ?>
 
 <main class="page-produtos" id="produtos">
     <div class="services-header-container" style="margin-top: 40px;">

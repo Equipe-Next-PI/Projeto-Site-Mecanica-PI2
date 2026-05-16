@@ -23,7 +23,7 @@ $sucesso = isset($_GET['sucesso']) ? $_GET['sucesso'] : null;
     <div class="login-wrapper" id="container">
 
         <div class="form-container sign-up-container">
-            <form action="registrar_action.php" method="POST">
+            <form action="./modules/registrar_action.php" method="POST">
                 <h1>Registro</h1>
                 <input type="text" name="nome" placeholder="Nome" required />
                 <input type="text" name="sobrenome" placeholder="Sobrenome" required />
@@ -38,7 +38,7 @@ $sucesso = isset($_GET['sucesso']) ? $_GET['sucesso'] : null;
         </div>
 
         <div class="form-container sign-in-container">
-            <form action="login_action.php" method="POST">
+            <form action="./modules/login_action.php" method="POST">
                 <h1>login</h1>
 
                 <?php if ($erro): ?>
