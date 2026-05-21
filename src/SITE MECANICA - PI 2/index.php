@@ -368,8 +368,8 @@
       </div>
     </section>
 
-    <?php include_once('./includes/footer.php'); ?>
   </div>
+  <?php include_once('./includes/footer.php'); ?>
 
   <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
   <script src="./assets/script.js"></script>

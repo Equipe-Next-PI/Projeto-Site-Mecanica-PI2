@@ -124,6 +124,41 @@ body {
   outline: none;
 }
 
+/* ============================================================
+   BOTÕES DE AÇÃO DA TABELA
+   ============================================================ */
+.td-acoes {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+}
+
+.btn-editar, .btn-excluir {
+    padding: 6px 12px;
+    border-radius: 4px;
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: 600;
+    color: white;
+    transition: 0.3s;
+}
+
+.btn-editar {
+    background-color: #1f3a5f; /* Azul da Equipe NEXT */
+}
+
+.btn-editar:hover {
+    background-color: #152842;
+}
+
+.btn-excluir {
+    background-color: #dc3545; /* Vermelho padrão de alerta */
+}
+
+.btn-excluir:hover {
+    background-color: #c82333;
+}
+
 .form-container h3 {
   font-family: var(--font-montserrat);
   color: white;

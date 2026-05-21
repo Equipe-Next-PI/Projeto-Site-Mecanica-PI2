@@ -20,7 +20,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         // Redireciona dependendo do nível de acesso mapeado no ENUM
         // Se o login der certo e for administrador, vai para o painel:
         if ($usuario['nivel_acesso'] === 'admin') {
-            header("Location: ../../admin_produtos.php");
+            header("Location: ../../../admin_produtos.php");
             exit;
         } else {
             header("Location: ../../index.php");
