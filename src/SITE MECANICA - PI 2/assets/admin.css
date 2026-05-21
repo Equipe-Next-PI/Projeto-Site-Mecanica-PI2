@@ -114,14 +114,73 @@ body {
   width: 100%;
 }
 
+
+/* ============================================================
+   ESTILOS DA BARRA DE PESQUISA
+   ============================================================ */
+.form-pesquisa {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.form-pesquisa .input-group {
+    display: flex;
+    gap: 8px;
+    width: 100%;
+}
+
 .search-input {
-  width: 100%;
-  padding: 12px 15px;
-  border-radius: 20px;
-  border: none;
-  font-family: var(--font-montserrat);
-  font-weight: 600;
-  outline: none;
+    flex: 1; /* Faz o campo de texto ocupar o máximo de espaço possível */
+    padding: 10px 14px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 14px;
+    outline: none;
+    transition: border-color 0.3s ease;
+}
+
+.search-input:focus {
+    border-color: #ff6b00; /* Cor de destaque para indicar que o campo está ativo */
+    box-shadow: 0 0 0 2px rgba(255, 107, 0, 0.1);
+}
+
+.btn-pesquisar {
+    background-color: #ff6b00; /* Laranja da identidade visual */
+    color: #ffffff;
+    border: none;
+    border-radius: 6px;
+    padding: 0 16px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.1s;
+}
+
+.btn-pesquisar:hover {
+    background-color: #e65c00; /* Laranja ligeiramente mais escuro no hover */
+}
+
+.btn-pesquisar:active {
+    transform: scale(0.96); /* Efeito de afundar ao clicar */
+}
+
+.link-limpar {
+    font-size: 12px;
+    color: #dc3545;
+    text-decoration: none;
+    margin-top: 8px;
+    font-weight: 500;
+    align-self: flex-start;
+    transition: color 0.3s;
+}
+
+.link-limpar:hover {
+    color: #a71d2a;
+    text-decoration: underline;
 }
 
 /* ============================================================

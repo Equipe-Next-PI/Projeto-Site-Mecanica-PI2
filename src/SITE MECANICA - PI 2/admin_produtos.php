@@ -14,9 +14,22 @@ if (!isset($_SESSION['usuario_id']) || $_SESSION['nivel_acesso'] !== 'admin') {
 // (Ajuste o caminho se o arquivo admin_produtos estiver fora da pasta src)
 require_once './config/conexao.php';
 
-// 3. BUSCA OS PRODUTOS NO BANCO
+// 3. BUSCA OS PRODUTOS NO BANCO (COM FILTRO DE PESQUISA)
+$busca = isset($_GET['busca']) ? trim($_GET['busca']) : '';
+
 try {
-    $stmt = $pdo->query("SELECT id, nome, descricao, preco, estoque FROM produtos ORDER BY id DESC");
+    if ($busca !== '') {
+        // Se o utilizador digitou algo, usamos o LIKE para procurar palavras parecidas
+        // O % significa "qualquer coisa antes ou depois" da palavra
+        $sql = "SELECT id, nome, descricao, preco, estoque FROM produtos 
+                WHERE nome LIKE :busca OR descricao LIKE :busca ORDER BY id DESC";
+        $stmt = $pdo->prepare($sql);
+        $stmt->execute([':busca' => '%' . $busca . '%']);
+    } else {
+        // Se a barra estiver vazia, traz tudo normalmente
+        $stmt = $pdo->query("SELECT id, nome, descricao, preco, estoque FROM produtos ORDER BY id DESC");
+    }
+
     $produtos = $stmt->fetchAll(PDO::FETCH_ASSOC);
 } catch (PDOException $e) {
     die("Erro ao carregar produtos: " . $e->getMessage());
@@ -57,9 +70,17 @@ try {
                 $erro = isset($_GET['erro']) ? $_GET['erro'] : null;
                 ?>
 
-                <?php if ($sucesso): ?>
+                <?php if ($sucesso === '1'): ?>
                     <div style="background-color: #d4edda; color: #155724; padding: 10px; margin-bottom: 15px; border-radius: 4px;">
                         Produto cadastrado com sucesso!
+                    </div>
+                <?php elseif ($sucesso === 'editado'): ?>
+                    <div style="background-color: #cce5ff; color: #004085; padding: 10px; margin-bottom: 15px; border-radius: 4px;">
+                        Produto atualizado com sucesso!
+                    </div>
+                <?php elseif ($sucesso === 'excluido'): ?>
+                    <div style="background-color: #d4edda; color: #155724; padding: 10px; margin-bottom: 15px; border-radius: 4px;">
+                        Produto excluído com sucesso!
                     </div>
                 <?php endif; ?>
 
@@ -116,7 +137,16 @@ try {
         <aside class="admin-sidebar">
 
             <div class="search-box">
-                <input type="text" placeholder="Pesquisar" class="search-input" />
+                <form action="admin_produtos.php" method="GET" class="form-pesquisa">
+                    <div class="input-group">
+                        <input type="text" name="busca" placeholder="Pesquisar produto..." class="search-input" value="<?php echo htmlspecialchars($busca); ?>" />
+                        <button type="submit" class="btn-pesquisar">Buscar</button>
+                    </div>
+
+                    <?php if ($busca !== ''): ?>
+                        <a href="admin_produtos.php" class="link-limpar">Limpar pesquisa</a>
+                    <?php endif; ?>
+                </form>
             </div>
 
             <div class="form-container">
