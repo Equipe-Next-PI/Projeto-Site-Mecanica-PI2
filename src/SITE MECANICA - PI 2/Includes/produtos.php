@@ -14,21 +14,7 @@ try {
 }
 ?>
 
-<div class="products-grid">
-    <?php foreach ($produtos as $produto): ?>
-        <div class="product-card">
-            <img src="<?php echo htmlspecialchars($produto['imagem']); ?>" alt="Imagem do produto">
-            <h3>
-                <?php echo htmlspecialchars($produto['nome']); ?>
-            </h3>
-            <p>R$
-                <?php echo number_format($produto['preco'], 2, ',', '.'); ?>
-            </p>
-        </div>
-    <?php endforeach; ?>
-</div>
 
-<?php require_once './includes/footer.php'; ?>
 
 <main class="page-produtos" id="produtos">
     <div class="services-header-container" style="margin-top: 40px;">
@@ -40,23 +26,19 @@ try {
 
     <section class="products-grid-container">
         <div class="products-grid">
-
-            <?php foreach ($produtos_cadastrados as $produto): ?>
-                <div class="product-card">
-                    <div class="product-image-wrapper">
-                        <img src="<?php echo $produto['imagem']; ?>" alt="<?php echo $produto['nome']; ?>"
-                            class="product-image">
+            <div class="products-grid">
+                <?php foreach ($produtos as $produto): ?>
+                    <div class="product-card">
+                        <img src="<?php echo htmlspecialchars($produto['imagem']); ?>" alt="Imagem do produto">
+                        <h3>
+                            <?php echo htmlspecialchars($produto['nome']); ?>
+                        </h3>
+                        <p>R$
+                            <?php echo number_format($produto['preco'], 2, ',', '.'); ?>
+                        </p>
                     </div>
-                    <div class="product-info">
-                        <h3 class="product-name"><?php echo $produto['nome']; ?></h3>
-                        <p class="product-desc"><?php echo $produto['descricao']; ?></p>
-                        <div class="product-price-row">
-                            <span class="product-price">R$ <?php echo $produto['preco']; ?></span>
-                            <button class="btn-buy">Comprar</button>
-                        </div>
-                    </div>
-                </div>
-            <?php endforeach; ?>
+                <?php endforeach; ?>
+            </div>
 
         </div>
     </section>
