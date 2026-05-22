@@ -290,21 +290,32 @@
       <div class="form-container">
         <section class="form-contato">
           <div class="solicite-um-oramento">Solicite um orçamento</div>
-          <form action="./Includes/contato.php" method="POST">
+          
+          <?php if (isset($_GET['sucesso']) && $_GET['sucesso'] == '1'): ?>
+              <div style="background-color: #d4edda; color: #155724; padding: 12px; margin-bottom: 20px; border-radius: 6px; font-weight: 600; text-align: center; font-family: 'Montserrat', sans-serif;">
+                  Orçamento enviado com sucesso! A nossa equipe entrará em contato em breve.
+              </div>
+          <?php elseif (isset($_GET['erro'])): ?>
+              <div style="background-color: #f8d7da; color: #721c24; padding: 12px; margin-bottom: 20px; border-radius: 6px; font-weight: 600; text-align: center; font-family: 'Montserrat', sans-serif;">
+                  Erro ao enviar orçamento. Verifique se preencheu todos os campos obrigatórios.
+              </div>
+          <?php endif; ?>
+
+          <form action="./modules/formularios/enviar_orcamento.php" method="POST">
             <div class="input-fields">
               <input name="nome" type="text" class="input-nome" placeholder="Nome:" required />
               <input name="email" type="email" class="input-email" placeholder="Email:" required />
 
               <div class="input-pair">
                 <input name="telefone" class="input-tel" placeholder="Telefone:" type="text" />
-                <input name="celular" class="input-cel" placeholder="Celular:" type="text" />
+                <input name="celular" class="input-cel" placeholder="Celular:" type="text" required />
               </div>
               <div class="input-pair">
-                <input name="marca" class="input-marca" placeholder="Marca do Veículo:" type="text" />
-                <input name="modelo" class="input-modelo" placeholder="Modelo e Ano:" type="text" />
+                <input name="marca" class="input-marca" placeholder="Marca do Veículo:" type="text" required />
+                <input name="modelo" class="input-modelo" placeholder="Modelo e Ano:" type="text" required />
               </div>
-              <input name="servico" class="input-tipo" placeholder="Tipo de Serviço:" type="text" />
-              <textarea name="descricao" class="input-desc" placeholder="Descrição do Problema:"></textarea>
+              <input name="servico" class="input-tipo" placeholder="Tipo de Serviço:" type="text" required />
+              <textarea name="descricao" class="input-desc" placeholder="Descrição do Problema:" required></textarea>
             </div>
             <div class="btn-submit-wrapper">
               <button type="submit" class="btn-submit">

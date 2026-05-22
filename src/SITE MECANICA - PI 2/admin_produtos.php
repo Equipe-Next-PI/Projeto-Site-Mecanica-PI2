@@ -56,8 +56,9 @@ try {
             <div class="logo2">EQUIPE <span style="color: #ff6b00;">NEXT</span></div>
         </div>
         <div class="admin-nav-links">
-            <a href="./admin_produtos.php" class="active">Produtos / Estoque</a>
-            <a href="./admin_usuarios.php">Cadastrar Funcionário</a>
+            <a href="./admin_produtos.php">Produtos / Estoque</a>
+            <a href="./admin_usuarios.php">Gerenciar Equipe</a>
+            <a href="./admin_formularios.php">Mensagens</a> 
             <a href="./modules/auth/logout.php" style="color: #dc3545; font-weight: 700;">Sair</a>
         </div>
     </header>
