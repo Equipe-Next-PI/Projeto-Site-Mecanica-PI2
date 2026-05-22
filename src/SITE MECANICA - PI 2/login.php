@@ -27,7 +27,7 @@ $erro = isset($_GET['erro']) ? $_GET['erro'] : null;
     <div class="login-wrapper" id="container" style="display: flex; justify-content: center; align-items: center; min-height: 100vh;">
 
         <div class="form-container sign-in-container" style="position: static; width: 100%; max-width: 400px; background: white; padding: 40px; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.1);">
-            <form action="./modules/login_action.php" method="POST" style="background: transparent; padding: 0;">
+            <form action="./modules/auth/login_action.php" method="POST" style="background: transparent; padding: 0;">
                 <div class="logo-next" style="text-align: center; margin-bottom: 20px; color: #1f3a5f; font-weight: 700; font-size: 24px;">
                     EQUIPE <span style="color: #ff6b00;">NEXT</span><br><span style="font-size: 16px; font-weight: 400; color: #666;">Painel Administrativo</span>
                 </div>

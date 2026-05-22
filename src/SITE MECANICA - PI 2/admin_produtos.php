@@ -53,12 +53,12 @@ try {
 
     <header class="admin-nav">
         <div class="logo">
-            <div class="logo2">Logo</div>
+            <div class="logo2">EQUIPE <span style="color: #ff6b00;">NEXT</span></div>
         </div>
         <div class="admin-nav-links">
-            <a href="#" class="active">Produtos</a>
-            <a href="#">Formulário</a>
-            <a href="#">Contato</a>
+            <a href="./admin_produtos.php" class="active">Produtos / Estoque</a>
+            <a href="./admin_usuarios.php">Cadastrar Funcionário</a>
+            <a href="./modules/auth/logout.php" style="color: #dc3545; font-weight: 700;">Sair</a>
         </div>
     </header>
 
@@ -123,10 +123,10 @@ try {
                                     <td><?php echo $produto['estoque']; ?></td>
 
                                     <td class="td-acoes">
-                                        <a href="./modules/produto_editar.php?id=<?php echo $produto['id']; ?>"
+                                        <a href="./modules/produtos/produto_editar.php?id=<?php echo $produto['id']; ?>"
                                             class="btn-editar">Editar</a>
 
-                                        <a href="./modules/produto_excluir.php?id=<?php echo $produto['id']; ?>"
+                                        <a href="./modules/produtos/produto_excluir.php?id=<?php echo $produto['id']; ?>"
                                             class="btn-excluir"
                                             onclick="return confirm('Tem certeza que deseja excluir o produto <?php echo htmlspecialchars($produto['nome']); ?>?');">Excluir</a>
                                     </td>
@@ -161,7 +161,7 @@ try {
             <div class="form-container">
                 <h3>Registre seu produto</h3>
 
-                <form action="./modules/produto_action.php" method="POST" enctype="multipart/form-data"
+                <form action="./modules/produtos/produto_action.php" method="POST" enctype="multipart/form-data"
                     class="admin-form">
                     <input type="text" name="nome" placeholder="Produto" required />
                     <input type="number" step="0.01" name="preco" placeholder="Preço" required />
