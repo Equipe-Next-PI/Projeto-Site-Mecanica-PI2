@@ -86,9 +86,9 @@ $erro = isset($_GET['erro']) ? $_GET['erro'] : null;
                                 </td>
                                 
                                 <td class="td-acoes">
-                                    <a href="./modules/usuario_editar.php?id=<?php echo $user['id']; ?>" class="btn-editar">Editar</a>
+                                    <a href="./modules/usuarios/usuario_editar.php?id=<?php echo $user['id']; ?>" class="btn-editar">Editar</a>
                                     
-                                    <a href="./modules/usuario_excluir.php?id=<?php echo $user['id']; ?>" class="btn-excluir" onclick="return confirm('Tem certeza que deseja excluir o funcionário <?php echo htmlspecialchars($user['nome']); ?>?');">Excluir</a>
+                                    <a href="./modules/usuarios/usuario_excluir.php?id=<?php echo $user['id']; ?>" class="btn-excluir" onclick="return confirm('Tem certeza que deseja excluir o funcionário <?php echo htmlspecialchars($user['nome']); ?>?');">Excluir</a>
                                 </td>
                             </tr>
                         <?php endforeach; ?>

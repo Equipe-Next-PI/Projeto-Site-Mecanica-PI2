@@ -13,9 +13,13 @@
 
 <div class="root">
   <header class="nav">
-    <button class="logo">
-      <div class="logo2">Logo</div>
-    </button>
+    <a href="./login.php" style="text-decoration: none; cursor: pointer;">
+
+      <div class="logo">
+        <div class="logo2">EQUIPE <span style="color: #ff6b00;">NEXT</span></div>
+      </div>
+
+    </a>
     <div class="navigation-links" id="nav-links">
       <a class="home" href="#home">Home</a>
       <a class="servios" href="#servicos">Serviços</a>
