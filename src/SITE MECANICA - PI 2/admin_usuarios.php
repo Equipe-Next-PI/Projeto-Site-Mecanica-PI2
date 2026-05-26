@@ -30,6 +30,19 @@ $erro = isset($_GET['erro']) ? $_GET['erro'] : null;
     <link rel="stylesheet" href="./assets/global.css" />
     <link rel="stylesheet" href="./assets/admin.css" />
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" />
+    
+    <style>
+        /* Padronização da fonte Montserrat para todo o sistema */
+        body, table, th, td, input, select, button, textarea, a {
+            font-family: 'Montserrat', sans-serif !important;
+        }
+
+        /* Garante que o título do formulário e o botão continuem brancos */
+        .form-container h3, 
+        .btn-salvar {
+            color: #ffffff !important;
+        }
+    </style>
 </head>
 <body>
 
@@ -71,7 +84,8 @@ $erro = isset($_GET['erro']) ? $_GET['erro'] : null;
                             <th>Nome Completo</th>
                             <th>E-mail</th>
                             <th>Nível de Acesso</th>
-                            <th>Ações</th> </tr>
+                            <th>Ações</th> 
+                        </tr>
                     </thead>
                     <tbody>
                         <?php foreach ($usuarios as $user): ?>
@@ -106,7 +120,7 @@ $erro = isset($_GET['erro']) ? $_GET['erro'] : null;
                     <input type="email" name="email" placeholder="E-mail corporativo" required />
                     <input type="password" name="senha" placeholder="Senha de Acesso" required />
                     
-                    <label style="font-size: 12px; font-weight: 600; margin-top: 10px; display: block;">Nível de Permissão:</label>
+                    <label style="font-size: 12px; font-weight: 600; margin-top: 10px; display: block; color: #000000;">Nível de Permissão:</label>
                     <select name="nivel_acesso" style="width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 4px; margin-bottom: 20px; font-family: inherit;">
                         <option value="admin">Administrador (Gerente/Mecânico)</option>
                         <option value="cliente">Cliente (Apenas visualização)</option>

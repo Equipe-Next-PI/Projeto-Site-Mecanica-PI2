@@ -1,6 +1,12 @@
 /* ============================================================
    ADMIN.CSS — Painel de Administração NEXT
    ============================================================ */
+
+/* --- PADRONIZAÇÃO GLOBAL DE FONTES --- */
+body, table, th, td, input, select, button, textarea, a {
+    font-family: 'Montserrat', sans-serif !important;
+}
+
 body {
   background-color: #f0f2f5; /* Fundo cinza claro para destacar a tabela */
   margin: 0;
@@ -25,6 +31,11 @@ body {
   border-radius: 4px;
 }
 
+/* Modificação sutil para a logo interna */
+.logo2 span {
+  color: #ff6b00;
+}
+
 .admin-nav-links {
   display: flex;
   gap: 30px;
@@ -42,13 +53,16 @@ body {
   border-bottom: 2px solid white;
 }
 
+.admin-nav-links .btn-logout {
+  color: #dc3545; 
+  font-weight: 700;
+}
 
 .admin-container {
   display: grid;
   grid-template-columns: 1fr 350px; 
   flex: 1; 
 }
-
 
 .admin-content {
   padding: 40px;
@@ -68,6 +82,26 @@ body {
   font-size: 24px;
   margin: 0;
   color: var(--color-gray-300);
+}
+
+/* --- MENSAGENS DE FEEDBACK (ALERTAS PHP) --- */
+.alert {
+  padding: 10px; 
+  margin-top: 15px; 
+  border-radius: 4px; 
+  font-size: 14px;
+}
+.alert-success {
+  background-color: #d4edda; 
+  color: #155724;
+}
+.alert-info {
+  background-color: #cce5ff; 
+  color: #004085;
+}
+.alert-danger {
+  background-color: #f8d7da; 
+  color: #721c24;
 }
 
 .table-container {
@@ -101,6 +135,22 @@ body {
   background-color: #fdfdfd; /* Zebrado muito sutil */
 }
 
+/* --- BADGES DE NÍVEL DE ACESSO --- */
+.badge-acesso {
+  padding: 3px 8px; 
+  border-radius: 4px; 
+  font-size: 12px; 
+  font-weight: 600;
+}
+.badge-admin {
+  background: #e2eefa; 
+  color: #004085;
+}
+.badge-cliente {
+  background: #eee; 
+  color: #333;
+}
+
 /* Lado Direito: Barra Laranja (Formulário) */
 .admin-sidebar {
   background-color: var(--Destaque); /* Laranja NEXT */
@@ -113,7 +163,6 @@ body {
 .search-box {
   width: 100%;
 }
-
 
 /* ============================================================
    ESTILOS DA BARRA DE PESQUISA
@@ -218,9 +267,10 @@ body {
     background-color: #c82333;
 }
 
+/* --- ESTILIZAÇÃO DO FORMULÁRIO LATERAL --- */
 .form-container h3 {
   font-family: var(--font-montserrat);
-  color: white;
+  color: white !important; /* Mantido estritamente branco */
   font-size: 16px;
   font-weight: 600;
   margin-top: 0;
@@ -243,9 +293,28 @@ body {
   resize: none; /* Impede o usuário de quebrar o layout da textarea */
 }
 
+/* Label específica do Nível de Permissão */
+.form-label-permissao {
+  font-size: 12px; 
+  font-weight: 600; 
+  margin-top: 10px; 
+  display: block; 
+  color: #000000 !important; /* Texto configurado estritamente em preto */
+}
+
+/* Select do formulário lateral */
+.form-select-permissao {
+  width: 100%; 
+  padding: 10px; 
+  border: 1px solid #ccc; 
+  border-radius: 4px; 
+  margin-bottom: 20px; 
+  font-family: inherit;
+}
+
 .btn-salvar {
   background-color: var(--Principal); /* Azul escuro */
-  color: white;
+  color: white !important; /* Mantido estritamente branco */
   border: none;
   border-radius: 8px;
   padding: 12px;
