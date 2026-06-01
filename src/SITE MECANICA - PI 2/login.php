@@ -37,7 +37,7 @@ $erro = isset($_GET['erro']) ? $_GET['erro'] : null;
             <input type="password" name="senha" placeholder="Senha" required class="login-input" />
 
             <button type="submit" class="btn-submit">Entrar no Sistema</button>
-        </form>
+        </form> 
     </div>
 
 </body>
