@@ -1,7 +1,6 @@
 <?php
 session_start();
 
-// TRAVA DE SEGURANÇA: Só entra se for Admin logado
 if (!isset($_SESSION['usuario_id']) || $_SESSION['nivel_acesso'] !== 'admin') {
     header("Location: ./login.php?erro=acesso_negado");
     exit;
@@ -9,7 +8,6 @@ if (!isset($_SESSION['usuario_id']) || $_SESSION['nivel_acesso'] !== 'admin') {
 
 require_once './config/conexao.php'; 
 
-// Puxa todos os usuários do banco para listar na tabela
 try {
     $stmt = $pdo->query("SELECT id, nome, sobrenome, email, nivel_acesso, data_criacao FROM usuarios ORDER BY id DESC");
     $usuarios = $stmt->fetchAll(PDO::FETCH_ASSOC);
@@ -18,9 +16,8 @@ try {
 }
 
 $sucesso = isset($_GET['sucesso']) ? $_GET['sucesso'] : null;
-$erro = isset($_GET['erro']) ? $_GET['erro'] : null;
+$erro    = isset($_GET['erro'])    ? $_GET['erro']    : null;
 ?>
-
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
@@ -30,31 +27,18 @@ $erro = isset($_GET['erro']) ? $_GET['erro'] : null;
     <link rel="stylesheet" href="./assets/global.css" />
     <link rel="stylesheet" href="./assets/admin.css" />
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" />
-    
-    <style>
-        /* Padronização da fonte Montserrat para todo o sistema */
-        body, table, th, td, input, select, button, textarea, a {
-            font-family: 'Montserrat', sans-serif !important;
-        }
-
-        /* Garante que o título do formulário e o botão continuem brancos */
-        .form-container h3, 
-        .btn-salvar {
-            color: #ffffff !important;
-        }
-    </style>
 </head>
 <body>
 
     <header class="admin-nav">
         <div class="logo">
-            <div class="logo2">EQUIPE <span style="color: #ff6b00;">NEXT</span></div>
+            <div class="logo2">EQUIPE <span>NEXT</span></div>
         </div>
         <div class="admin-nav-links">
             <a href="./admin_produtos.php">Produtos / Estoque</a>
-            <a href="./admin_usuarios.php">Gerenciar Equipe</a>
-            <a href="./admin_formularios.php">Mensagens</a> 
-            <a href="./modules/auth/logout.php" style="color: #dc3545; font-weight: 700;">Sair</a>
+            <a href="./admin_usuarios.php" class="active">Gerenciar Equipe</a>
+            <a href="./admin_formularios.php">Mensagens</a>
+            <a href="./modules/auth/logout.php" class="btn-logout-nav">Sair</a>
         </div>
     </header>
 
@@ -65,15 +49,14 @@ $erro = isset($_GET['erro']) ? $_GET['erro'] : null;
                 <h1>Membros da Equipe / Clientes</h1>
                 
                 <?php if ($sucesso === '1'): ?>
-                    <div style="background-color: #d4edda; color: #155724; padding: 10px; margin-top: 15px; border-radius: 4px; font-size: 14px;">Novo usuário registrado com sucesso!</div>
+                    <div class="alert alert-success">Novo usuário registrado com sucesso!</div>
                 <?php elseif ($sucesso === 'excluido'): ?>
-                    <div style="background-color: #d4edda; color: #155724; padding: 10px; margin-top: 15px; border-radius: 4px; font-size: 14px;">Usuário excluído do sistema.</div>
+                    <div class="alert alert-success">Usuário excluído do sistema.</div>
                 <?php elseif ($sucesso === 'editado'): ?>
-                    <div style="background-color: #cce5ff; color: #004085; padding: 10px; margin-top: 15px; border-radius: 4px; font-size: 14px;">Dados do usuário atualizados!</div>
+                    <div class="alert alert-info">Dados do usuário atualizados!</div>
                 <?php elseif ($erro === 'auto_exclusao'): ?>
-                    <div style="background-color: #f8d7da; color: #721c24; padding: 10px; margin-top: 15px; border-radius: 4px; font-size: 14px;">Ação Negada: Você não pode excluir a sua própria conta!</div>
+                    <div class="alert alert-danger">Ação Negada: Você não pode excluir a sua própria conta!</div>
                 <?php endif; ?>
-
             </div>
 
             <div class="table-container">
@@ -94,14 +77,14 @@ $erro = isset($_GET['erro']) ? $_GET['erro'] : null;
                                 <td><?php echo htmlspecialchars($user['nome'] . ' ' . $user['sobrenome']); ?></td>
                                 <td><?php echo htmlspecialchars($user['email']); ?></td>
                                 <td>
-                                    <span style="padding: 3px 8px; border-radius: 4px; font-size: 12px; font-weight: 600; background: <?php echo $user['nivel_acesso'] === 'admin' ? '#e2eefa; color: #004085;' : '#eee; color: #333;'; ?>">
-                                        <?php echo strtoupper($user['nivel_acesso']); ?>
-                                    </span>
+                                    <?php if ($user['nivel_acesso'] === 'admin'): ?>
+                                        <span class="badge-acesso badge-admin"><?php echo strtoupper($user['nivel_acesso']); ?></span>
+                                    <?php else: ?>
+                                        <span class="badge-acesso badge-cliente"><?php echo strtoupper($user['nivel_acesso']); ?></span>
+                                    <?php endif; ?>
                                 </td>
-                                
                                 <td class="td-acoes">
                                     <a href="./modules/usuarios/usuario_editar.php?id=<?php echo $user['id']; ?>" class="btn-editar">Editar</a>
-                                    
                                     <a href="./modules/usuarios/usuario_excluir.php?id=<?php echo $user['id']; ?>" class="btn-excluir" onclick="return confirm('Tem certeza que deseja excluir o funcionário <?php echo htmlspecialchars($user['nome']); ?>?');">Excluir</a>
                                 </td>
                             </tr>
@@ -120,8 +103,8 @@ $erro = isset($_GET['erro']) ? $_GET['erro'] : null;
                     <input type="email" name="email" placeholder="E-mail corporativo" required />
                     <input type="password" name="senha" placeholder="Senha de Acesso" required />
                     
-                    <label style="font-size: 12px; font-weight: 600; margin-top: 10px; display: block; color: #000000;">Nível de Permissão:</label>
-                    <select name="nivel_acesso" style="width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 4px; margin-bottom: 20px; font-family: inherit;">
+                    <label class="form-label-permissao">Nível de Permissão:</label>
+                    <select name="nivel_acesso" class="form-select-permissao">
                         <option value="admin">Administrador (Gerente/Mecânico)</option>
                         <option value="cliente">Cliente (Apenas visualização)</option>
                     </select>

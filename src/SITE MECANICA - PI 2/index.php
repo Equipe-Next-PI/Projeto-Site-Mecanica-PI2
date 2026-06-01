@@ -292,11 +292,11 @@
           <div class="solicite-um-oramento">Solicite um orçamento</div>
           
           <?php if (isset($_GET['sucesso']) && $_GET['sucesso'] == '1'): ?>
-              <div style="background-color: #d4edda; color: #155724; padding: 12px; margin-bottom: 20px; border-radius: 6px; font-weight: 600; text-align: center; font-family: 'Montserrat', sans-serif;">
+              <div class="form-alert form-alert--success">
                   Orçamento enviado com sucesso! A nossa equipe entrará em contato em breve.
               </div>
           <?php elseif (isset($_GET['erro'])): ?>
-              <div style="background-color: #f8d7da; color: #721c24; padding: 12px; margin-bottom: 20px; border-radius: 6px; font-weight: 600; text-align: center; font-family: 'Montserrat', sans-serif;">
+              <div class="form-alert form-alert--danger">
                   Erro ao enviar orçamento. Verifique se preencheu todos os campos obrigatórios.
               </div>
           <?php endif; ?>
@@ -353,7 +353,7 @@
               <div class="map-location">
                 <iframe
                   src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14634.33161280387!2d-46.7056037088118!3d-23.511520110469623!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94cef85566f19ecf%3A0xc682f6e91316b208!2sFreguesia%20do%20%C3%93%2C%20S%C3%A3o%20Paulo%20-%20SP!5e0!3m2!1spt-BR!2sbr!4v1714500000000!5m2!1spt-BR!2sbr"
-                  width="100%" height="120" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                  width="100%" height="120"  allowfullscreen="" loading="lazy"></iframe>
               </div>
 
               <div class="contact-list-right">

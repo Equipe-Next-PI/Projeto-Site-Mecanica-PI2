@@ -38,7 +38,7 @@
       <div class="footer-street">(11) 98765-4321</div>
       <div class="contatoemailcom">
         <a href="mailto:contato@oficinanext.com.br"
-          style="color: inherit; text-decoration: none;">contato@oficinanext.com.br</a>
+          >contato@oficinanext.com.br</a>
       </div>
     </div>
   </div>

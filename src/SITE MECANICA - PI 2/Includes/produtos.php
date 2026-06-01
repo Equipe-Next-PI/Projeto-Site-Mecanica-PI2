@@ -17,7 +17,7 @@ try {
 
 
 <main class="page-produtos" id="produtos">
-    <div class="services-header-container" style="margin-top: 40px;">
+    <div class="services-header-container services-header-container--top">
         <h2 class="section-title">Nossos Produtos</h2>
         <div class="section-subtitle">
             Peças e acessórios de qualidade <span class="star-icon">★</span>
