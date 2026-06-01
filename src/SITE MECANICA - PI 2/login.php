@@ -15,7 +15,7 @@ $erro = isset($_GET['erro']) ? $_GET['erro'] : null;
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login Restrito - Oficina NEXT</title>
     <link rel="stylesheet" href="./assets/global.css" />
-    <link rel="stylesheet" href="./assets/admin.css" />
+    <link rel="stylesheet" href="./assets/login.css" />
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" />
 </head>
 <body class="login-page-body">
