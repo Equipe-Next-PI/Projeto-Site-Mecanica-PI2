@@ -7,7 +7,7 @@
           <b class="lorem-ipsum-dolor">© 2026 Mecânica NEXT. Todos os direitos reservados.</b>
         </div>
         <div class="criado-por-alickson">
-          Criado por: Alickson Ramos - Vitor Hugo - Pedro Henrique
+          Criado por: Alickson Ramos - Vitor Hugo - Pedro de Jesus  
         </div>
       </div>
     </div>
