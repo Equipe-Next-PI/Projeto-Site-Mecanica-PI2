@@ -9,10 +9,10 @@
         <div class="swiper-slide card-carousel-parent carousel-slide--1">
           <div class="card-carousel">
             <h1 class="lorem-ipson">MECÂNICA DE CONFIANÇA</h1>
-            <p class="lorem-ipsum-dolor">Especialistas em câmbio automático e injeção eletrônica na Freguesia do Ó.</p>
+            <p class="carousel-subtitle">Especialistas em câmbio automático e injeção eletrônica na Freguesia do Ó.</p>
             <div class="cta-buttons">
-              <button class="conhea">Conheça a NEXT</button>
-              <button class="component-3">Serviços</button>
+              <a class="conhea" href="#sobre">Conheça a NEXT</a>
+              <a class="component-3" href="#servicos">Serviços</a>
             </div>
           </div>
         </div>
@@ -20,9 +20,9 @@
         <div class="swiper-slide card-carousel-parent carousel-slide--2">
           <div class="card-carousel">
             <h1 class="lorem-ipson">TECNOLOGIA DE PONTA</h1>
-            <p class="lorem-ipsum-dolor">Diagnóstico computadorizado para identificar problemas com precisão.</p>
+            <p class="carousel-subtitle">Diagnóstico computadorizado para identificar problemas com precisão.</p>
             <div class="cta-buttons">
-              <button class="conhea">Agendar Agora</button>
+              <a class="conhea" href="#contato">Agendar Agora</a>
             </div>
           </div>
         </div>
@@ -30,9 +30,9 @@
         <div class="swiper-slide card-carousel-parent carousel-slide--3">
           <div class="card-carousel">
             <h1 class="lorem-ipson">QUALIDADE GARANTIDA</h1>
-            <p class="lorem-ipsum-dolor">Peças originais e mão de obra especializada para o seu veículo.</p>
+            <p class="carousel-subtitle">Peças originais e mão de obra especializada para o seu veículo.</p>
             <div class="cta-buttons">
-              <button class="conhea">Fale Conosco</button>
+              <a class="conhea" href="#contato">Fale Conosco</a>
             </div>
           </div>
         </div>
@@ -51,12 +51,12 @@
         </div>
         <div class="rectangle-parent">
           <!-- Substituir src pela imagem desejada. Tamanho ideal: 600x400px -->
-          <img class="frame-child" loading="lazy" alt="Manutenção Preventiva" src="./assets/img/cards.png" />
+          <img class="frame-child" loading="lazy" alt="Manutenção Preventiva" src="./assets/img/mecanica1.jpg" />
           <div class="card-overlay-text">Manutenção preventiva com peças originais.</div>
         </div>
         <div class="rectangle-parent">
           <!-- Substituir src pela imagem desejada. Tamanho ideal: 600x400px -->
-          <img class="frame-child" loading="lazy" alt="Equipe Especializada" src="./assets/img/cards.png" />
+          <img class="frame-child" loading="lazy" alt="Equipe Especializada" src="./assets/img/mecanica3.jpg" />
           <div class="card-overlay-text">Equipe especializada em carros nacionais e importados.</div>
         </div>
       </div>

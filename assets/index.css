@@ -138,10 +138,19 @@ section {
   margin: 0;
 }
 
-.lorem-ipsum-dolor {
-  font-family: var(--font-verdana);
-  font-size: 100px;
+.card-carousel {
+  font-family: 'Montserrat', sans-serif;
+}
+
+.carousel-subtitle {
+  font-family: 'Montserrat', sans-serif;
+  font-size: clamp(20px, 3vw, 30px);
+  font-weight: 400;
+  line-height: 1.5;
   color: var(--color-white);
+  max-width: 700px;
+  margin: 0;
+  letter-spacing: 0.2px;
 }
 
 .cta-buttons {
@@ -153,6 +162,8 @@ section {
 
 .conhea,
 .component-3 {
+  display: inline-block;
+  text-decoration: none;
   cursor: pointer;
   padding: 12px 30px;
   border-radius: var(--br-20);
@@ -161,6 +172,7 @@ section {
   font-weight: 600;
   color: var(--color-white);
   transition: 0.3s;
+  box-sizing: border-box;
 }
 
 .conhea {
@@ -173,6 +185,10 @@ section {
 }
 .conhea:hover {
   background-color: var(--color-orangered);
+}
+
+.component-3:hover {
+  background-color: rgba(255, 255, 255, 0.15);
 }
 
 /* ============================================================
@@ -233,9 +249,9 @@ section {
   padding: 16px 20px 20px;
   color: white;
   font-family: var(--font-montserrat);
-  font-size: 14px;
+  font-size: clamp(15px, 1.8vw, 18px);
   font-weight: 600;
-  line-height: 1.4;
+  line-height: 1.5;
   background: linear-gradient(transparent, rgba(0, 0, 0, 0.85));
   transition: padding-bottom 0.3s ease, background 0.3s ease;
 }
@@ -960,10 +976,15 @@ section {
   align-items: start;
   padding: 48px 60px 36px;
   gap: 40px;
-  font-family: var(--font-rubik);
-  font-size: var(--fs-12);
+  font-family: 'Montserrat', sans-serif;
+  font-size: var(--fs-16);
   color: var(--Apoio);
   box-sizing: border-box;
+}
+
+.footer,
+.footer * {
+  font-family: 'Montserrat', sans-serif;
 }
 
 .footer-content {
@@ -976,18 +997,18 @@ section {
   gap: 4px;
 }
 
-.lorem-ipsum-dolor {
-  font-family: var(--font-rubik);
-  font-size: var(--fs-12);
+.footer .lorem-ipsum-dolor {
+  font-family: 'Montserrat', sans-serif;
+  font-size: var(--fs-16);
   font-weight: 700;
   color: var(--Apoio);
   margin-bottom: 5px;
 }
 
 .criado-por-alickson {
-  font-family: var(--font-nunito);
-  font-size: 10px;
-  color: var(--Apoio);
+  font-family: 'Montserrat', sans-serif;
+  font-size: 14px;
+  color: rgba(229, 229, 229, 0.85);
 }
 
 .operating-hours {
@@ -1020,8 +1041,9 @@ section {
 }
 
 .icon-heroicons-solid-loc2 {
-  width: 18px;
-  height: 18px;
+  width: 20px;
+  height: 20px;
+  filter: brightness(0) saturate(100%) invert(52%) sepia(98%) saturate(2476%) hue-rotate(1deg) brightness(103%) contrast(105%);
 }
 
 .address-footer {
@@ -1032,7 +1054,7 @@ section {
 
 .footer-street,
 .contatoemailcom {
-  font-family: var(--font-rubik);
+  font-family: var(--font-montserrat);
   color: var(--Apoio);
 }
 
@@ -1049,13 +1071,50 @@ section {
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
   cursor: pointer;
-  gap: 5px;
+  gap: 10px;
+  text-decoration: none;
+  padding: 8px;
+  border-radius: 12px;
+  transition: transform 0.3s ease;
+}
+
+.back-to-top:hover {
+  transform: translateY(-4px);
+}
+
+.back-to-top .top-icon {
+  width: 52px;
+  height: 52px;
+  background-color: var(--Destaque);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 14px rgba(255, 107, 0, 0.4);
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.back-to-top:hover .top-icon {
+  background-color: var(--color-orangered);
+  box-shadow: 0 6px 20px rgba(255, 107, 0, 0.55);
+}
+
+.back-to-top .icon-ionicons-outline-bu {
+  width: 22px;
+  height: 22px;
+  filter: brightness(0) invert(1);
 }
 
 .retornar-ao-inicio {
-  font-weight: 500;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 13px;
+  font-weight: 600;
   color: var(--Apoio);
+  text-align: center;
+  line-height: 1.3;
+  white-space: nowrap;
 }
 
 /* Responsividade do Footer — regras consolidadas no bloco @900px abaixo */
