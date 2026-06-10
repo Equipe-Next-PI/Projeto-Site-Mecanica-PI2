@@ -13,10 +13,10 @@
 
 <div class="root">
   <header class="nav">
-    <a href="./login.php" style="text-decoration: none; cursor: pointer;">
+    <a href="./login.php" class="logo-link">
 
       <div class="logo">
-        <div class="logo2">EQUIPE <span style="color: #ff6b00;">NEXT</span></div>
+        <div class="logo2">EQUIPE <span>NEXT</span></div>
       </div>
 
     </a>

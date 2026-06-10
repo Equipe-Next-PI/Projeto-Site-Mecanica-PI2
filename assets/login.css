@@ -1,0 +1,274 @@
+/* ============================================================
+   LOGIN.CSS — Tela de autenticação | Mecânica NEXT
+   Paleta: Azul escuro (#1f3a5f) + Laranja (#ff6b00)
+   ============================================================ */
+
+body {
+    background-color: var(--Principal);
+    font-family: var(--font-montserrat);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    overflow: hidden;
+}
+
+h1 {
+    color: white;
+    font-weight: 700;
+    margin-bottom: 24px;
+    font-size: 26px;
+    text-transform: lowercase;
+    letter-spacing: 1px;
+}
+
+/* ── Wrapper principal ── */
+.login-wrapper {
+    background-color: var(--Principal);
+    position: relative;
+    overflow: hidden;
+    width: 900px;
+    max-width: 100%;
+    min-height: 520px;
+    border-radius: 20px;
+    box-shadow: 0 14px 40px rgba(0,0,0,0.35);
+}
+
+/* ── Contentores dos formulários ── */
+.form-container {
+    position: absolute;
+    top: 0;
+    height: 100%;
+    width: 50%;
+    transition: all 0.6s ease-in-out;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.sign-in-container {
+    left: 50%;
+    z-index: 2;
+}
+
+.login-wrapper.right-panel-active .sign-in-container {
+    transform: translateX(-100%);
+    opacity: 0;
+    z-index: 1;
+}
+
+/* ── Caixa do formulário ── */
+form {
+    background-color: rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(12px);
+    border-radius: 16px;
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 40px 36px;
+    height: 80%;
+    width: 85%;
+    text-align: center;
+}
+
+/* ── Campos de input ── */
+input {
+    background-color: rgba(255, 255, 255, 0.92);
+    border: 2px solid transparent;
+    padding: 13px 20px;
+    margin: 7px 0;
+    width: 100%;
+    border-radius: 25px;
+    font-family: var(--font-montserrat);
+    font-size: 14px;
+    color: #101828;
+    outline: none;
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+input:focus {
+    border-color: var(--Destaque);
+    box-shadow: 0 0 0 3px rgba(255, 107, 0, 0.2);
+}
+
+input::placeholder {
+    color: #888;
+}
+
+/* ── Mensagem de erro ── */
+.erro-msg {
+    color: #ffb380;
+    font-size: 13px;
+    font-weight: 600;
+    margin-bottom: 12px;
+    background-color: rgba(255, 107, 0, 0.15);
+    padding: 8px 14px;
+    border-radius: 20px;
+    width: 100%;
+    text-align: center;
+}
+
+/* ── Ações do formulário ── */
+.links-actions {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    margin-top: 20px;
+}
+
+.btn-submit {
+    background-color: var(--Destaque);
+    color: white;
+    border: none;
+    padding: 13px 40px;
+    border-radius: 25px;
+    font-family: var(--font-montserrat);
+    font-size: 14px;
+    font-weight: 700;
+    cursor: pointer;
+    letter-spacing: 0.5px;
+    transition: background-color 0.2s, transform 0.1s, box-shadow 0.2s;
+    box-shadow: 0 4px 15px rgba(255, 107, 0, 0.4);
+}
+
+.btn-submit:hover {
+    background-color: var(--color-orangered);
+    box-shadow: 0 6px 20px rgba(255, 107, 0, 0.5);
+}
+
+.btn-submit:active {
+    transform: scale(0.97);
+}
+
+/* ── Overlay laranja ── */
+.overlay-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 50%;
+    height: 100%;
+    overflow: hidden;
+    transition: transform 0.6s ease-in-out;
+    z-index: 100;
+}
+
+.overlay {
+    background: linear-gradient(135deg, var(--Destaque) 0%, #e65200 100%);
+    color: #fff;
+    position: relative;
+    left: 0;
+    height: 100%;
+    width: 200%;
+    transform: translateX(0);
+    transition: transform 0.6s ease-in-out, border-radius 0.6s ease-in-out;
+    border-radius: 0 40% 40% 0 / 0 10% 10% 0;
+    display: flex;
+    align-items: center;
+}
+
+.overlay-panel {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+    top: 0;
+    height: 100%;
+    width: 50%;
+    padding: 0 30px;
+}
+
+.overlay-left  { left: 0; }
+.overlay-right { right: 0; }
+
+/* ── Logo no overlay ── */
+.logo-next {
+    font-family: var(--font-montserrat);
+    font-size: 22px;
+    font-weight: 700;
+    color: white;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+.logo-next span {
+    font-size: 36px;
+    font-weight: 800;
+    display: block;
+    letter-spacing: 3px;
+}
+
+.overlay-subtitle {
+    font-family: var(--font-montserrat);
+    font-size: 13px;
+    color: rgba(255, 255, 255, 0.85);
+    margin-top: 10px;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+}
+
+/* ── Divisória decorativa ── */
+.overlay-left::after {
+    content: '';
+    display: block;
+    width: 40px;
+    height: 3px;
+    background-color: rgba(255, 255, 255, 0.5);
+    border-radius: 2px;
+    margin-top: 16px;
+}
+
+/* ── Responsividade mobile ── */
+@media screen and (max-width: 768px) {
+    .login-wrapper {
+        width: 100%;
+        height: 100vh;
+        min-height: 100vh;
+        border-radius: 0;
+        box-shadow: none;
+    }
+
+    .overlay-container { display: none; }
+
+    .form-container {
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0 !important;
+    }
+
+    form {
+        background-color: var(--Principal);
+        border: none;
+        backdrop-filter: none;
+        border-radius: 0;
+        width: 100%;
+        height: 100%;
+        padding: 40px 30px;
+    }
+
+    h1 {
+        font-size: 32px;
+        margin-bottom: 30px;
+        color: var(--Destaque);
+    }
+
+    input {
+        padding: 15px 20px;
+        font-size: 16px;
+        margin: 8px 0;
+    }
+
+    .btn-submit {
+        width: 100%;
+        padding: 15px;
+        font-size: 15px;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+    }
+}

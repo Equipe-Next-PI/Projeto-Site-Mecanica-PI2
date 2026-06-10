@@ -16,7 +16,6 @@ try {
 
 $sucesso = isset($_GET['sucesso']) ? $_GET['sucesso'] : null;
 ?>
-
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
@@ -30,25 +29,25 @@ $sucesso = isset($_GET['sucesso']) ? $_GET['sucesso'] : null;
 <body>
 
     <header class="admin-nav">
-        <div class="logo"><div class="logo2">EQUIPE <span style="color: #ff6b00;">NEXT</span></div></div>
+        <div class="logo"><div class="logo2">EQUIPE <span>NEXT</span></div></div>
         <div class="admin-nav-links">
             <a href="./admin_produtos.php">Produtos / Estoque</a>
             <a href="./admin_usuarios.php">Gerenciar Equipe</a>
             <a href="./admin_formularios.php" class="active">Mensagens</a>
-            <a href="./modules/auth/logout.php" style="color: #dc3545; font-weight: 700;">Sair</a>
+            <a href="./modules/auth/logout.php" class="btn-logout-nav">Sair</a>
         </div>
     </header>
 
-    <main class="admin-container" style="justify-content: center;">
+    <main class="admin-container admin-container--full">
         
-        <section class="admin-content" style="flex: 0 0 100%; max-width: 1100px;">
+        <section class="admin-content admin-content--wide">
             <div class="content-header">
                 <h1>Caixa de Entrada do Site</h1>
                 
                 <?php if ($sucesso === 'excluido'): ?>
-                    <div style="background-color: #d4edda; color: #155724; padding: 10px; margin-top: 15px; border-radius: 4px;">Mensagem excluída com sucesso.</div>
+                    <div class="alert alert-success">Mensagem excluída com sucesso.</div>
                 <?php elseif ($sucesso === 'concluido'): ?>
-                    <div style="background-color: #d4edda; color: #155724; padding: 10px; margin-top: 15px; border-radius: 4px;">Orçamento marcado como concluído com sucesso!</div>
+                    <div class="alert alert-success">Orçamento marcado como concluído com sucesso!</div>
                 <?php endif; ?>
             </div>
 
@@ -67,29 +66,26 @@ $sucesso = isset($_GET['sucesso']) ? $_GET['sucesso'] : null;
                     <tbody>
                         <?php if (count($mensagens) > 0): ?>
                             <?php foreach ($mensagens as $msg): ?>
-                                <?php 
-                                // Define o estilo do texto com base no status
-                                $negrito = $msg['status'] === 'nao_lido' ? 'font-weight: 800; color: #000;' : 'font-weight: 400; color: #555;'; 
-                                ?>
-                                <tr>
-                                    <td style="<?php echo $negrito; ?>"><?php echo date('d/m/Y H:i', strtotime($msg['data_envio'])); ?></td>
-                                    <td style="<?php echo $negrito; ?>"><?php echo htmlspecialchars($msg['nome']); ?></td>
-                                    <td style="<?php echo $negrito; ?>"><?php echo htmlspecialchars($msg['marca_veiculo']); ?></td>
-                                    <td style="<?php echo $negrito; ?>"><?php echo htmlspecialchars($msg['tipo_servico']); ?></td>
+                                <?php $rowClass = $msg['status'] === 'nao_lido' ? 'row-unread' : 'row-read'; ?>
+                                <tr class="<?php echo $rowClass; ?>">
+                                    <td><?php echo date('d/m/Y H:i', strtotime($msg['data_envio'])); ?></td>
+                                    <td><?php echo htmlspecialchars($msg['nome']); ?></td>
+                                    <td><?php echo htmlspecialchars($msg['marca_veiculo']); ?></td>
+                                    <td><?php echo htmlspecialchars($msg['tipo_servico']); ?></td>
                                     <td>
                                         <?php if ($msg['status'] === 'nao_lido'): ?>
-                                            <span style="padding: 4px 8px; border-radius: 4px; font-size: 11px; font-weight: 600; background: #ffe8d6; color: #ff6b00;">NOVA</span>
+                                            <span class="badge-nova">NOVA</span>
                                         <?php elseif ($msg['status'] === 'lido'): ?>
-                                            <span style="padding: 4px 8px; border-radius: 4px; font-size: 11px; font-weight: 600; background: #e2eefa; color: #004085;">LIDA</span>
+                                            <span class="badge-lida">LIDA</span>
                                         <?php else: ?>
-                                            <span style="padding: 4px 8px; border-radius: 4px; font-size: 11px; font-weight: 600; background: #d4edda; color: #155724;">CONCLUÍDA</span>
+                                            <span class="badge-concluida">CONCLUÍDA</span>
                                         <?php endif; ?>
                                     </td>
                                     <td class="td-acoes">
-                                        <a href="./modules/formularios/formulario_ver.php?id=<?php echo $msg['id']; ?>" class="btn-editar" style="background-color: #28a745;">Ler</a>
+                                        <a href="./modules/formularios/formulario_ver.php?id=<?php echo $msg['id']; ?>" class="btn-editar btn-ler">Ler</a>
                                         
                                         <?php if ($msg['status'] !== 'concluido'): ?>
-                                            <a href="./modules/formularios/formulario_concluir.php?id=<?php echo $msg['id']; ?>" class="btn-editar" style="background-color: #0056b3;">Concluir</a>
+                                            <a href="./modules/formularios/formulario_concluir.php?id=<?php echo $msg['id']; ?>" class="btn-editar btn-concluir">Concluir</a>
                                         <?php endif; ?>
 
                                         <a href="./modules/formularios/formulario_excluir.php?id=<?php echo $msg['id']; ?>" class="btn-excluir" onclick="return confirm('Excluir esta mensagem?');">Excluir</a>
@@ -97,7 +93,7 @@ $sucesso = isset($_GET['sucesso']) ? $_GET['sucesso'] : null;
                                 </tr>
                             <?php endforeach; ?>
                         <?php else: ?>
-                            <tr><td colspan="6" style="text-align: center;">Nenhuma mensagem recebida ainda.</td></tr>
+                            <tr><td colspan="6" class="td-empty">Nenhuma mensagem recebida ainda.</td></tr>
                         <?php endif; ?>
                     </tbody>
                 </table>

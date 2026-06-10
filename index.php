@@ -6,8 +6,7 @@
 
     <section id="home" class="swiper mySwiper">
       <div class="swiper-wrapper">
-        <div class="swiper-slide card-carousel-parent"
-          style="background-image: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('./assets/img/slide1.png');">
+        <div class="swiper-slide card-carousel-parent carousel-slide--1">
           <div class="card-carousel">
             <h1 class="lorem-ipson">MECÂNICA DE CONFIANÇA</h1>
             <p class="lorem-ipsum-dolor">Especialistas em câmbio automático e injeção eletrônica na Freguesia do Ó.</p>
@@ -18,13 +17,22 @@
           </div>
         </div>
 
-        <div class="swiper-slide card-carousel-parent"
-          style="background-image: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('./assets/img/slide2.png');">
+        <div class="swiper-slide card-carousel-parent carousel-slide--2">
           <div class="card-carousel">
             <h1 class="lorem-ipson">TECNOLOGIA DE PONTA</h1>
             <p class="lorem-ipsum-dolor">Diagnóstico computadorizado para identificar problemas com precisão.</p>
             <div class="cta-buttons">
               <button class="conhea">Agendar Agora</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="swiper-slide card-carousel-parent carousel-slide--3">
+          <div class="card-carousel">
+            <h1 class="lorem-ipson">QUALIDADE GARANTIDA</h1>
+            <p class="lorem-ipsum-dolor">Peças originais e mão de obra especializada para o seu veículo.</p>
+            <div class="cta-buttons">
+              <button class="conhea">Fale Conosco</button>
             </div>
           </div>
         </div>
@@ -37,15 +45,18 @@
     <section class="image-banner">
       <div class="frame-group">
         <div class="rectangle-parent">
-          <img class="frame-child" loading="lazy" alt="Serviço 1" src="./assets/img/cards.png" />
+          <!-- Substituir src pela imagem desejada. Tamanho ideal: 600x400px -->
+          <img class="frame-child" loading="lazy" alt="Diagnóstico Veicular" src="./assets/img/cards.png" />
           <div class="card-overlay-text">Diagnóstico preciso e rápido para o seu veículo.</div>
         </div>
         <div class="rectangle-parent">
-          <img class="frame-child" loading="lazy" alt="Serviço 2" src="./assets/img/cards.png" />
+          <!-- Substituir src pela imagem desejada. Tamanho ideal: 600x400px -->
+          <img class="frame-child" loading="lazy" alt="Manutenção Preventiva" src="./assets/img/cards.png" />
           <div class="card-overlay-text">Manutenção preventiva com peças originais.</div>
         </div>
         <div class="rectangle-parent">
-          <img class="frame-child" loading="lazy" alt="Serviço 3" src="./assets/img/cards.png" />
+          <!-- Substituir src pela imagem desejada. Tamanho ideal: 600x400px -->
+          <img class="frame-child" loading="lazy" alt="Equipe Especializada" src="./assets/img/cards.png" />
           <div class="card-overlay-text">Equipe especializada em carros nacionais e importados.</div>
         </div>
       </div>
@@ -292,11 +303,11 @@
           <div class="solicite-um-oramento">Solicite um orçamento</div>
           
           <?php if (isset($_GET['sucesso']) && $_GET['sucesso'] == '1'): ?>
-              <div style="background-color: #d4edda; color: #155724; padding: 12px; margin-bottom: 20px; border-radius: 6px; font-weight: 600; text-align: center; font-family: 'Montserrat', sans-serif;">
+              <div class="form-alert form-alert--success">
                   Orçamento enviado com sucesso! A nossa equipe entrará em contato em breve.
               </div>
           <?php elseif (isset($_GET['erro'])): ?>
-              <div style="background-color: #f8d7da; color: #721c24; padding: 12px; margin-bottom: 20px; border-radius: 6px; font-weight: 600; text-align: center; font-family: 'Montserrat', sans-serif;">
+              <div class="form-alert form-alert--danger">
                   Erro ao enviar orçamento. Verifique se preencheu todos os campos obrigatórios.
               </div>
           <?php endif; ?>
@@ -327,33 +338,27 @@
 
         <section class="service-area">
           <div class="nossoserv">
-            <img class="services-background-icon" loading="lazy" alt="Mecânico" src="./assets/img/forms.png" />
+            <img class="services-background-icon" loading="lazy" alt="Mecânico trabalhando" src="./assets/img/forms.png" />
             <div class="services-info">
-              <div class="services-title">
-                <b class="nossos-servios">Nossos Serviços</b>
-              </div>
-              <div class="service-list">
-                <div class="manuteno-preventiva-reparos-container">
-                  <ul class="manuteno-preventiva-reparos">
-                    <li>Manutenção Preventiva</li>
-                    <li>Reparos Gerais</li>
-                    <li>Troca de Óleo e Filtros</li>
-                    <li>Alinhamento e Balanceamento</li>
-                    <li>Freios e Suspensão</li>
-                    <li>Diagnóstico Eletrônico</li>
-                  </ul>
-                </div>
-              </div>
+              <h3 class="nossos-servios">Nossos Serviços</h3>
+              <ul class="service-list">
+                <li>Manutenção Preventiva</li>
+                <li>Reparos Gerais</li>
+                <li>Troca de Óleo e Filtros</li>
+                <li>Alinhamento e Balanceamento</li>
+                <li>Freios e Suspensão</li>
+                <li>Diagnóstico Eletrônico</li>
+              </ul>
             </div>
           </div>
 
           <div class="map-area">
-            <b class="mapa">Mapa</b>
+            <h3 class="mapa">Onde estamos</h3>
             <div class="map-interface">
               <div class="map-location">
                 <iframe
                   src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14634.33161280387!2d-46.7056037088118!3d-23.511520110469623!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94cef85566f19ecf%3A0xc682f6e91316b208!2sFreguesia%20do%20%C3%93%2C%20S%C3%A3o%20Paulo%20-%20SP!5e0!3m2!1spt-BR!2sbr!4v1714500000000!5m2!1spt-BR!2sbr"
-                  width="100%" height="120" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                  width="100%" height="180" allowfullscreen="" loading="lazy" title="Localização Mecânica NEXT"></iframe>
               </div>
 
               <div class="contact-list-right">
