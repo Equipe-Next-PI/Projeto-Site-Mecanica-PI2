@@ -1,0 +1,747 @@
+/* ============================================================
+   ADMIN.CSS — Painel de Administração NEXT
+   ============================================================ */
+
+/* --- PADRONIZAÇÃO GLOBAL DE FONTES --- */
+body, table, th, td, input, select, button, textarea, a {
+    font-family: 'Montserrat', sans-serif !important;
+}
+
+body {
+  background-color: #f0f2f5; /* Fundo cinza claro para destacar a tabela */
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* Navbar Admin */
+.admin-nav {
+  background-color: var(--Principal);
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 40px;
+}
+
+.admin-nav .logo {
+  background-color: #334d6e;
+  padding: 5px 20px;
+  border-radius: 4px;
+}
+
+/* Modificação sutil para a logo interna */
+.logo2 span {
+  color: #ff6b00;
+}
+
+.admin-nav-links {
+  display: flex;
+  gap: 30px;
+}
+
+.admin-nav-links a {
+  color: white;
+  text-decoration: none;
+  font-family: var(--font-montserrat);
+  font-size: 14px;
+}
+
+.admin-nav-links a.active {
+  font-weight: bold;
+  border-bottom: 2px solid white;
+}
+
+.admin-nav-links .btn-logout {
+  color: #dc3545; 
+  font-weight: 700;
+}
+
+.admin-container {
+  display: grid;
+  grid-template-columns: 1fr 350px; 
+  flex: 1; 
+}
+
+.admin-content {
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+}
+
+.content-header {
+  background-color: white;
+  padding: 20px 40px;
+  border-bottom: 2px solid #e0e0e0;
+  margin: -40px -40px 40px -40px; /* Estica o título até as bordas */
+}
+
+.content-header h1 {
+  font-family: var(--font-montserrat);
+  font-size: 24px;
+  margin: 0;
+  color: var(--color-gray-300);
+}
+
+/* --- MENSAGENS DE FEEDBACK (ALERTAS PHP) --- */
+.alert {
+  padding: 10px; 
+  margin-top: 15px; 
+  border-radius: 4px; 
+  font-size: 14px;
+}
+.alert-success {
+  background-color: #d4edda; 
+  color: #155724;
+}
+.alert-info {
+  background-color: #cce5ff; 
+  color: #004085;
+}
+.alert-danger {
+  background-color: #f8d7da; 
+  color: #721c24;
+}
+
+.table-container {
+  background-color: white;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.admin-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-family: var(--font-montserrat);
+  font-size: 14px;
+}
+
+.admin-table th, .admin-table td {
+  padding: 15px 20px;
+  text-align: left;
+  border-bottom: 1px solid #e0e0e0;
+  border-right: 1px solid #e0e0e0; /* Linhas verticais do protótipo */
+}
+
+.admin-table th {
+  background-color: #f8f9fa;
+  font-weight: 600;
+  color: #555;
+}
+
+.admin-table tr:nth-child(even) {
+  background-color: #fdfdfd; /* Zebrado muito sutil */
+}
+
+/* --- BADGES DE NÍVEL DE ACESSO --- */
+.badge-acesso {
+  padding: 3px 8px; 
+  border-radius: 4px; 
+  font-size: 12px; 
+  font-weight: 600;
+}
+.badge-admin {
+  background: #e2eefa; 
+  color: #004085;
+}
+.badge-cliente {
+  background: #eee; 
+  color: #333;
+}
+
+/* Lado Direito: Barra Laranja (Formulário) */
+.admin-sidebar {
+  background-color: var(--Destaque); /* Laranja NEXT */
+  padding: 40px 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.search-box {
+  width: 100%;
+}
+
+/* ============================================================
+   ESTILOS DA BARRA DE PESQUISA
+   ============================================================ */
+.form-pesquisa {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.form-pesquisa .input-group {
+    display: flex;
+    gap: 8px;
+    width: 100%;
+}
+
+.search-input {
+    flex: 1; /* Faz o campo de texto ocupar o máximo de espaço possível */
+    padding: 10px 14px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 14px;
+    outline: none;
+    transition: border-color 0.3s ease;
+}
+
+.search-input:focus {
+    border-color: #ff6b00; /* Cor de destaque para indicar que o campo está ativo */
+    box-shadow: 0 0 0 2px rgba(255, 107, 0, 0.1);
+}
+
+.btn-pesquisar {
+    background-color: #ff6b00; /* Laranja da identidade visual */
+    color: #ffffff;
+    border: none;
+    border-radius: 6px;
+    padding: 0 16px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.1s;
+}
+
+.btn-pesquisar:hover {
+    background-color: #e65c00; /* Laranja ligeiramente mais escuro no hover */
+}
+
+.btn-pesquisar:active {
+    transform: scale(0.96); /* Efeito de afundar ao clicar */
+}
+
+.link-limpar {
+    font-size: 12px;
+    color: #dc3545;
+    text-decoration: none;
+    margin-top: 8px;
+    font-weight: 500;
+    align-self: flex-start;
+    transition: color 0.3s;
+}
+
+.link-limpar:hover {
+    color: #a71d2a;
+    text-decoration: underline;
+}
+
+/* ============================================================
+   BOTÕES DE AÇÃO DA TABELA
+   ============================================================ */
+.td-acoes {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+}
+
+.btn-editar, .btn-excluir {
+    padding: 6px 12px;
+    border-radius: 4px;
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: 600;
+    color: white;
+    transition: 0.3s;
+}
+
+.btn-editar {
+    background-color: #1f3a5f; /* Azul da Equipe NEXT */
+}
+
+.btn-editar:hover {
+    background-color: #152842;
+}
+
+.btn-excluir {
+    background-color: #dc3545; /* Vermelho padrão de alerta */
+}
+
+.btn-excluir:hover {
+    background-color: #c82333;
+}
+
+/* --- ESTILIZAÇÃO DO FORMULÁRIO LATERAL --- */
+.form-container h3 {
+  font-family: var(--font-montserrat);
+  color: white !important; /* Mantido estritamente branco */
+  font-size: 16px;
+  font-weight: 600;
+  margin-top: 0;
+  margin-bottom: 20px;
+}
+
+.admin-form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.admin-form input, .admin-form textarea {
+  width: 100%;
+  padding: 12px 15px;
+  border-radius: 8px;
+  border: none;
+  font-family: var(--font-montserrat);
+  font-size: 14px;
+  resize: none;
+  box-sizing: border-box;
+}
+
+/* Label específica do Nível de Permissão */
+.form-label-permissao {
+  font-size: 12px; 
+  font-weight: 600; 
+  margin-top: 10px; 
+  display: block; 
+  color: #000000 !important; /* Texto configurado estritamente em preto */
+}
+
+/* Select do formulário lateral */
+.form-select-permissao {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  margin-bottom: 20px;
+  font-family: inherit;
+  box-sizing: border-box;
+}
+
+.btn-salvar {
+  background-color: var(--Principal); /* Azul escuro */
+  color: white !important; /* Mantido estritamente branco */
+  border: none;
+  border-radius: 8px;
+  padding: 12px;
+  font-family: var(--font-montserrat);
+  font-weight: bold;
+  cursor: pointer;
+  margin-top: 10px;
+  transition: 0.3s;
+}
+
+.btn-salvar:hover {
+  background-color: #12223a;
+}
+/* ============================================================
+   PÁGINA DE LOGIN — Painel simplificado
+   ============================================================ */
+.login-page-body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: var(--Principal);
+}
+
+.login-card {
+  width: 100%;
+  max-width: 400px;
+  background: white;
+  padding: 40px;
+  border-radius: 8px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+.login-card form {
+  background: transparent;
+  padding: 0;
+  border-radius: 0;
+  backdrop-filter: none;
+  height: auto;
+  width: 100%;
+}
+
+.logo-next {
+  text-align: center;
+  margin-bottom: 20px;
+  color: var(--Principal);
+  font-weight: 700;
+  font-size: 24px;
+}
+
+.logo-next span {
+  color: var(--Destaque);
+}
+
+.logo-next .subtitle {
+  display: block;
+  font-size: 16px;
+  font-weight: 400;
+  color: #666;
+}
+
+.login-error {
+  color: #ff4d4d;
+  font-size: 12px;
+  margin-bottom: 15px;
+  text-align: center;
+  font-weight: 600;
+}
+
+.login-input {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-family: var(--font-montserrat);
+  font-size: 14px;
+  box-sizing: border-box;
+}
+
+.login-input:focus {
+  outline: none;
+  border-color: var(--Destaque);
+}
+
+.btn-submit {
+  width: 100%;
+  padding: 12px;
+  background: var(--Destaque);
+  color: white;
+  border: none;
+  border-radius: 4px;
+  font-weight: 600;
+  cursor: pointer;
+  font-family: var(--font-montserrat);
+  font-size: 14px;
+  transition: background-color 0.3s;
+}
+
+.btn-submit:hover {
+  background-color: var(--color-orangered);
+}
+
+/* ============================================================
+   PÁGINAS DE EDIÇÃO / VISUALIZAÇÃO (MODAL-STYLE)
+   ============================================================ */
+.page-centered-body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: #f4f7f6;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.edit-card {
+  width: 100%;
+  max-width: 500px;
+  background: white;
+  padding: 30px;
+  border-radius: 8px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+}
+
+.edit-card.wide {
+  max-width: 700px;
+  padding: 40px;
+}
+
+.edit-card h2 {
+  color: var(--Principal);
+  margin: 0 0 20px 0;
+}
+
+.edit-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  border-bottom: 1px solid #eee;
+  padding-bottom: 15px;
+}
+
+.edit-card-header h2 {
+  margin: 0;
+}
+
+.edit-card-header .meta-date {
+  font-size: 13px;
+  color: #888;
+}
+
+/* Grid de campos de leitura */
+.detail-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  margin-bottom: 20px;
+}
+
+.detail-field p.label {
+  margin: 0 0 5px 0;
+  font-size: 13px;
+  font-weight: 600;
+  color: #555;
+}
+
+.detail-field p.value {
+  margin: 0;
+  font-size: 15px;
+  color: #222;
+}
+
+.detail-field p.value.highlight {
+  font-weight: 600;
+  color: var(--Principal);
+}
+
+.detail-field p.value.orange {
+  color: var(--Destaque);
+  font-weight: 600;
+}
+
+.detail-block {
+  background: #f9f9f9;
+  padding: 20px;
+  border-radius: 6px;
+  border: 1px solid #e1e1e1;
+  margin-bottom: 25px;
+}
+
+.detail-block p.label {
+  margin: 0 0 10px 0;
+  font-size: 13px;
+  font-weight: 600;
+  color: #555;
+}
+
+.detail-block p.value {
+  margin: 0;
+  font-size: 15px;
+  color: #333;
+  line-height: 1.6;
+  white-space: pre-wrap;
+}
+
+/* Labels e campos dos formulários de edição */
+.form-label {
+  font-size: 13px;
+  font-weight: 600;
+  display: block;
+  margin-bottom: 5px;
+  color: #333;
+}
+
+.form-field {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  margin-bottom: 15px;
+  font-family: var(--font-montserrat);
+  font-size: 14px;
+  box-sizing: border-box;
+}
+
+.form-field:focus {
+  outline: none;
+  border-color: var(--Destaque);
+}
+
+.form-select {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  margin-bottom: 20px;
+  font-family: var(--font-montserrat);
+  font-size: 14px;
+}
+
+.image-preview {
+  margin-bottom: 15px;
+  text-align: center;
+  background: #f9f9f9;
+  padding: 10px;
+  border-radius: 4px;
+}
+
+.image-preview img {
+  max-width: 120px;
+  max-height: 120px;
+  object-fit: contain;
+  border-radius: 4px;
+}
+
+.form-file-input {
+  margin-bottom: 20px;
+  width: 100%;
+  font-family: var(--font-montserrat);
+  font-size: 13px;
+}
+
+.form-actions {
+  display: flex;
+  gap: 10px;
+}
+
+.form-actions .btn-salvar,
+.form-actions .btn-cancelar {
+  flex: 1;
+  text-align: center;
+  text-decoration: none;
+}
+
+.btn-cancelar {
+  display: inline-block;
+  padding: 12px;
+  border-radius: 4px;
+  background-color: #6c757d;
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  font-family: var(--font-montserrat);
+  font-size: 14px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.btn-cancelar:hover {
+  background-color: #545b62;
+}
+
+.btn-voltar {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #6c757d;
+  color: white;
+  border-radius: 4px;
+  text-decoration: none;
+  font-weight: bold;
+  font-family: var(--font-montserrat);
+  font-size: 14px;
+  transition: 0.3s;
+}
+
+.btn-voltar:hover {
+  background-color: #545b62;
+}
+
+.text-right {
+  text-align: right;
+}
+
+/* Badges de status das mensagens */
+.badge-nova    { padding: 4px 8px; border-radius: 4px; font-size: 11px; font-weight: 600; background: #ffe8d6; color: #ff6b00; }
+.badge-lida    { padding: 4px 8px; border-radius: 4px; font-size: 11px; font-weight: 600; background: #e2eefa; color: #004085; }
+.badge-concluida { padding: 4px 8px; border-radius: 4px; font-size: 11px; font-weight: 600; background: #d4edda; color: #155724; }
+
+/* Estado de leitura da linha (não lida vs lida) */
+.row-unread td { font-weight: 800; color: #000; }
+.row-read td   { font-weight: 400; color: #555; }
+
+/* Botões de ação coloridos (verde = Ler, azul = Concluir) */
+.btn-ler     { background-color: #28a745 !important; }
+.btn-ler:hover { background-color: #1e7e34 !important; }
+.btn-concluir { background-color: #0056b3 !important; }
+.btn-concluir:hover { background-color: #003d80 !important; }
+
+/* Link de logout (vermelho) na navbar */
+.btn-logout-nav {
+  color: #dc3545 !important;
+  font-weight: 700;
+}
+
+/* Label para imagem no form de produto */
+.label-imagem {
+  font-size: 13px;
+  font-weight: 600;
+  margin-top: 10px;
+  display: block;
+  color: #333;
+}
+
+/* ============================================================
+   CLASSES DO PAINEL — adicionadas para suporte aos PHPs
+   ============================================================ */
+
+/* Alertas de feedback */
+.alert { padding: 12px 16px; margin-top: 16px; border-radius: 4px; font-size: 13px; font-weight: 500; border-left: 4px solid transparent; }
+.alert-success  { background-color: #d4edda; color: #155724; border-left-color: #28a745; }
+.alert-info     { background-color: #dbeafe; color: #1e40af; border-left-color: #3b82f6; }
+.alert-danger   { background-color: #f8d7da; color: #721c24; border-left-color: #dc3545; }
+
+/* Badges de status mensagens */
+.badge-nova      { display: inline-block; padding: 3px 10px; border-radius: 4px; font-size: 11px; font-weight: 700; background: #fff0e6; color: #ff6b00; }
+.badge-lida      { display: inline-block; padding: 3px 10px; border-radius: 4px; font-size: 11px; font-weight: 700; background: #dbeafe; color: #1e40af; }
+.badge-concluida { display: inline-block; padding: 3px 10px; border-radius: 4px; font-size: 11px; font-weight: 700; background: #d4edda; color: #155724; }
+
+/* Badges de nível de acesso */
+.badge-acesso  { display: inline-block; padding: 3px 10px; border-radius: 4px; font-size: 11px; font-weight: 700; }
+.badge-admin   { background: #dbeafe; color: #1e40af; }
+.badge-cliente { background: #f1f1f1; color: #444; }
+
+/* Estado leitura das linhas */
+.row-unread td { font-weight: 700; color: #101828; }
+.row-read   td { font-weight: 400; color: #555; }
+
+/* Botões de ação coloridos */
+.btn-ler          { background-color: #28a745 !important; }
+.btn-ler:hover    { background-color: #1e7e34 !important; }
+.btn-concluir     { background-color: #1d6fb8 !important; }
+.btn-concluir:hover { background-color: #155a9a !important; }
+.btn-logout-nav   { color: #dc3545 !important; font-weight: 700 !important; }
+
+/* Label e input de arquivo */
+.label-imagem    { font-size: 13px; font-weight: 600; display: block; margin-bottom: 4px; color: rgba(255,255,255,0.95); }
+.form-file-input { font-size: 13px; color: rgba(255,255,255,0.9); margin-bottom: 15px; width: 100%; }
+
+/* Célula e layout de tabela */
+.td-empty               { text-align: center; color: #888; font-style: italic; padding: 32px; }
+.admin-container--full  { display: flex; justify-content: center; }
+.admin-content--wide    { flex: 0 0 100%; max-width: 1100px; }
+
+/* Labels e select de permissão (sidebar usuários) */
+.form-label-permissao   { font-size: 13px; font-weight: 700; color: rgba(255,255,255,0.95); display: block; margin-bottom: 4px; }
+.form-select-permissao  { width: 100%; padding: 11px 14px; border: 1.5px solid rgba(255,255,255,0.4); border-radius: 4px; font-size: 14px; background: rgba(255,255,255,0.92); color: #101828; outline: none; cursor: pointer; font-family: 'Montserrat', sans-serif; box-sizing: border-box; }
+
+/* Páginas de edição e visualização */
+.page-centered-body  { display: flex; justify-content: center; align-items: flex-start; min-height: 100vh; background-color: #f0f2f5; padding: 40px 20px; box-sizing: border-box; }
+.edit-card           { width: 100%; max-width: 520px; background: white; padding: 36px; border-radius: 8px; box-shadow: 0 4px 20px rgba(0,0,0,0.08); }
+.edit-card.wide      { max-width: 720px; }
+.edit-card h2        { font-size: 20px; font-weight: 700; color: #1f3a5f; margin: 0 0 24px 0; }
+
+.edit-card-header        { display: flex; justify-content: space-between; align-items: center; margin-bottom: 24px; padding-bottom: 16px; border-bottom: 1.5px solid #e0e0e0; }
+.edit-card-header h2     { margin: 0; }
+.meta-date               { font-size: 13px; color: #888; font-weight: 500; }
+
+.detail-grid             { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-bottom: 20px; }
+.detail-field            { margin-bottom: 4px; }
+.detail-field--spaced    { margin-bottom: 20px; }
+.detail-field p.label    { margin: 0 0 4px 0; font-size: 11px; font-weight: 700; color: #888; text-transform: uppercase; letter-spacing: 0.5px; }
+.detail-field p.value    { margin: 0; font-size: 14px; color: #101828; font-weight: 500; }
+.detail-field p.value.highlight { font-weight: 700; color: #1f3a5f; }
+.detail-field p.value.orange    { font-weight: 700; color: #ff6b00; }
+
+.detail-block            { background: #f8f9fa; padding: 20px; border-radius: 4px; border: 1px solid #e0e0e0; margin-bottom: 24px; }
+.detail-block p.label    { margin: 0 0 8px 0; font-size: 11px; font-weight: 700; color: #888; text-transform: uppercase; letter-spacing: 0.5px; }
+.detail-block p.value    { margin: 0; font-size: 14px; color: #101828; line-height: 1.7; white-space: pre-wrap; }
+
+.form-label   { font-size: 13px; font-weight: 700; color: #555; display: block; margin-bottom: 5px; text-transform: uppercase; letter-spacing: 0.4px; }
+.form-field   { width: 100%; padding: 11px 14px; border: 1.5px solid #e0e0e0; border-radius: 4px; margin-bottom: 16px; font-size: 14px; color: #101828; outline: none; box-sizing: border-box; font-family: 'Montserrat', sans-serif; }
+.form-field:focus { border-color: #ff6b00; box-shadow: 0 0 0 3px rgba(255,107,0,0.1); }
+.form-select  { width: 100%; padding: 11px 14px; border: 1.5px solid #e0e0e0; border-radius: 4px; margin-bottom: 20px; font-size: 14px; color: #101828; outline: none; cursor: pointer; font-family: 'Montserrat', sans-serif; }
+.form-select:focus { border-color: #ff6b00; }
+
+.image-preview     { margin-bottom: 16px; text-align: center; background: #f8f9fa; padding: 12px; border-radius: 4px; border: 1px solid #e0e0e0; }
+.image-preview img { max-width: 120px; max-height: 120px; object-fit: contain; border-radius: 4px; }
+
+.form-actions { display: flex; gap: 10px; margin-top: 4px; }
+.form-actions .btn-salvar { flex: 1; }
+
+.btn-cancelar       { flex: 1; display: inline-block; padding: 11px 20px; border-radius: 4px; background-color: #6c757d; color: #fff; text-decoration: none; font-size: 14px; font-weight: 700; text-align: center; cursor: pointer; border: none; transition: background-color 0.2s; font-family: 'Montserrat', sans-serif; }
+.btn-cancelar:hover { background-color: #545b62; }
+.btn-voltar         { display: inline-block; padding: 11px 20px; background-color: #6c757d; color: #fff; border-radius: 4px; text-decoration: none; font-size: 14px; font-weight: 700; transition: background-color 0.2s; }
+.btn-voltar:hover   { background-color: #545b62; }
+.text-right         { text-align: right; }
