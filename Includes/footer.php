@@ -7,7 +7,7 @@
           <b class="lorem-ipsum-dolor">© 2026 Mecânica NEXT. Todos os direitos reservados.</b>
         </div>
         <div class="criado-por-alickson">
-          Criado por: Alickson Ramos - Vitor Hugo - Pedro Henrique
+          Criado por: Alickson Ramos - Vitor Hugo - Pedro de Jesus  
         </div>
       </div>
     </div>
@@ -42,15 +42,13 @@
       </div>
     </div>
   </div>
-  <div class="back-to-top">
-    <div class="oil-change-detail">
-      <div class="top-icon">
-        <img class="icon-ionicons-outline-bu" loading="lazy" alt=""
-          src="./assets/icons/icon-ionicons-filled-chevron-up.svg" />
-      </div>
-      <div class="retornar-ao-inicio">Retornar ao início</div>
+  <a href="#home" class="back-to-top" aria-label="Retornar ao início">
+    <div class="top-icon">
+      <img class="icon-ionicons-outline-bu" loading="lazy" alt=""
+        src="./assets/icons/icon-ionicons-filled-chevron-up.svg" />
     </div>
-  </div>
+    <span class="retornar-ao-inicio">Retornar ao início</span>
+  </a>
 </footer>
 
 </body>
