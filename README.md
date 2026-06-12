@@ -36,15 +36,27 @@ O projeto segue uma estrutura organizada para garantir escalabilidade e facilida
 
 ```text
 .
-├── sql/                   # Scripts de criação do banco (schema.sql)
-├── src/
-│   ├── config/            # Conexão com banco de dados
-│   ├── includes/          # Componentes reutilizáveis (Header, Footer)
-│   ├── modules/           # Lógica dividida por funcionalidades
-│   │   ├── estoque/       # Controle de peças
-│   ├── assets/            # CSS, Imagens e Bibliotecas JS
-│   └── index.php          # Dashboard Principal / Login
-└── .env.example           # Template de variáveis de ambiente
+src/
+├── assets/
+│   ├── css/            (Estilos globais e painel admin)
+│   ├── img/            (Imagens estáticas e uploads de produtos)
+│   └── icons/          (Iconografia da interface)
+├── config/
+│   └── conexao.php     (Configuração central do banco de dados)
+├── Includes/
+│   ├── header.php      (Cabeçalho público reutilizável)
+│   ├── footer.php      (Rodapé público reutilizável)
+│   └── produtos.php    (Vitrine de serviços pública)
+├── modules/
+│   ├── auth/           (Ações de login e logout)
+│   ├── formularios/    (Ações de envio, leitura e conclusão de CRM)
+│   ├── produtos/       (Ações do CRUD de estoque e imagens)
+│   └── usuarios/       (Ações do CRUD de equipe)
+├── index.php           (Landing Page e captação de leads)
+├── login.php           (Tela de autenticação)
+├── admin_produtos.php  (Painel: Gestão de peças)
+├── admin_usuarios.php  (Painel: Gestão de equipe)
+└── admin_formularios.php(Painel: Caixa de Entrada / CRM)
 
 ```
 ---
